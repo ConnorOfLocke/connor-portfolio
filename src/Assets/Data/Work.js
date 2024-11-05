@@ -1,0 +1,286 @@
+import TurbochilliPanelImg from "../Images/turbochilli-panel.png";
+import BlowfishPanelImg from "../Images/blowfish-panel.png";
+import PlaysidePanelImg from "../Images/playside-panel.png";
+import CTGPanelImg from "../Images/ctg-panel.png";
+import SMGPanelImg from "../Images/smg-panel.png";
+
+const WORK = {
+  workplaces: [
+    {
+      title: "Turbochilli Publishing",
+      role: "Programmer",
+      startDate: "July 2016",
+      endDate: "August 2018",
+      panelImg: TurbochilliPanelImg,
+      projects: [
+        {
+          title: "Rolling Sky",
+          urlLink: "https://apps.apple.com/us/app/rolling-sky/id1036661603",
+          youtubeLink: "https://youtu.be/wCAZRRrPEzg",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          desciption:
+            "Arcade rhythm game - First studio project! Made 3 additional levels with new mechanics and some light modeling. Eventually was bought and reworked by a separate company.",
+        },
+        {
+          title: "Good Knight Story",
+          urlLink: "https://apps.apple.com/us/app/good-knight-story/id1067684327",
+          youtubeLink: "https://www.youtube.com/watch?v=qaFXl0faMV4",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          description:
+            "Action-Puzzle RPG for mobile. QA'd level progression, fixed bugs and eventually updated it for 64-bit IOS.",
+        },
+        {
+          title: "Stickman Surfer",
+          urlLink: "https://apps.apple.com/au/app/stickman-surfer/id1151245201",
+          youtubeLink: "https://www.youtube.com/watch?v=C-x3zno3XsI",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          description: "Infinite-Surfer Game. Was able to be part of the project through prototyping to release. ",
+        },
+        {
+          title: "Ghosts 'n Guns",
+          urlLink: "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
+          youtubeLink: "https://www.youtube.com/watch?v=1AcUtLczuV8",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          description:
+            "AR Arcade Shooter! First foray into making AR type games. Made to test out the IOS and Android AR functionality.",
+        },
+        {
+          title: "Unroll Me 2",
+          urlLink: "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
+          youtubeLink: "https://www.youtube.com/watch?v=BN1zR9cLIBs",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          description:
+            "Block Puzzle Game. Programed gameplay, designed and created levels and created additional mechanics from the original.",
+        },
+        {
+          title: "Up the Wall",
+          urlLink: "https://apps.apple.com/us/app/up-the-wall/id1205391576",
+          youtubeLink: "https://www.youtube.com/watch?v=tEqb5bvmKvA",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          description: "Perspective changing Arcade game. QA’d and programmed reward systems and analytics",
+        },
+      ],
+      franchises: [
+        {
+          title: "Stickman Franchise",
+          engine: "Cocos-2D",
+          target: ["IOS", "ANDROID"],
+          games: [
+            {
+              title: "Stickman Skater",
+              urlLink: "https://turbochilli.com/games/stickman-skater/",
+              youtubeLink: "https://www.youtube.com/watch?v=Lz4LvMNWUDQ",
+            },
+            {
+              title: "Stickman Snowboarder",
+              urlLink: "https://turbochilli.com/games/stickman-snowboarder/",
+              youtubeLink: "https://www.youtube.com/watch?v=iUL9F4c_JH8",
+            },
+            {
+              title: "Stickman BMX",
+              urlLink: "https://turbochilli.com/games/stickman-skater/",
+              youtubeLink: "https://www.youtube.com/watch?v=J2l01DxDHlE",
+            },
+          ],
+          description: "Ported and updated these games to wider 64-Bit IOS devices.",
+        },
+      ],
+    },
+    {
+      title: "Blowfish Studios",
+      role: "Games Programmer",
+      startDate: "August 2018",
+      endDate: "April 2020",
+      panelImg: BlowfishPanelImg,
+      projects: [
+        {
+          title: "Storm Boy: The Game",
+          urlLink: "https://www.blowfishstudios.com/game/storm-boy",
+          youtubeLink: "https://www.youtube.com/watch?v=j5VFRdhYydo",
+          engine: "Unity",
+          target: ["PC", "SWITCH", "XBOXONE", "PS4", "IOS", "ANDROID"],
+          desciption:
+            "Game adaptation of the Colin Thiele’s Book. First game I worked on that was ported to Switch, XboxOne and PS4. Lotta Addressable Asset debugging",
+        },
+        {
+          title: "War Tech Fighters",
+          urlLink: "https://www.blowfishstudios.com/game/wartech",
+          youtubeLink: "https://www.youtube.com/watch?v=1aSo4gbXUCY",
+          engine: "Unity",
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          desciption: "Third-Person Mech fighter. Was able to optimize, localize and port it to consoles.",
+        },
+        {
+          title: "Infinite: Beyond the Mind",
+          urlLink: "https://www.blowfishstudios.com/game/infinite",
+          youtubeLink: "https://www.youtube.com/watch?v=JMalnJlGpEY",
+          engine: "GameMaker",
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          desciption:
+            "Side Scrolling Brawler - First porting job using GameMaker. Ported to consoles and localized it into several languages. ",
+        },
+        {
+          title: "Whipseey and the Lost Atlas",
+          urlLink: "https://www.blowfishstudios.com/game/whipseey",
+          youtubeLink: "https://www.youtube.com/watch?v=EQw_CpQLc-k",
+          engine: "GameMaker",
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          desciption: "Kirby inspired 2D platformer. Like the infinite, Ported to consoles and made localized it.",
+        },
+        {
+          title: "Minesweeper Genius",
+          urlLink: "https://www.blowfishstudios.com/game/ms-genius",
+          youtubeLink: "https://www.youtube.com/watch?v=Ksjo0CA3B60",
+          engine: "Unity",
+          target: ["SWITCH", "XBOXONE", "PS4"],
+          desciption:
+            "Neat Puzzle Game! Was able to lead the porting job to translate the touch controls to controller input and localize it to several languages.",
+        },
+        {
+          title: "Homebase",
+          urlLink: "https://kids.scholastic.com/kid/homebase/",
+          youtubeLink: "https://www.youtube.com/watch?v=uMnBUbLUKGo",
+          engine: "Unity",
+          target: ["IOS", "ANDROID", "WebGL"],
+          desciption:
+            "Ongoing project for Scholastic. Was put in charge on integrating minigames, general gameplay and dialogue.",
+        },
+        {
+          title: "JackQuest",
+          urlLink: "https://www.blowfishstudios.com/game/jack-quest/",
+          youtubeLink: "https://www.youtube.com/watch?v=053J1i-zwMg",
+          engine: "GameMaker",
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          desciption: "2D Platformer - Setup the porting, localization and DLC for Consoles.",
+        },
+        {
+          title: "Easy Bill Pay",
+          urlLink: "https://www.blowfishstudios.com/game/jack-quest/",
+          youtubeLink: undefined,
+          engine: "C# and HTML",
+          target: ["IOS", "ANDROID", "WEB"],
+          desciption: "Application to help automate paying bills and sending out funds.",
+        },
+      ],
+      franchises: [],
+    },
+    {
+      title: "Playside Studios",
+      role: "Mid Programmer",
+      startDate: "September 2020",
+      endDate: "July 2021",
+      panelImg: PlaysidePanelImg,
+      projects: [
+        {
+          title: "Animal Warfare",
+          urlLink: "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
+          youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          desciption:
+            "Auto-Battler based on the Animal Kingdom. I was put in change of implementing special abilities, AB testing services, Analytics and visual effects.",
+        },
+        {
+          title: "FEI Equestriad: World Tour",
+          urlLink: "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
+          youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          desciption:
+            "Online competitive equestrian game. I got to work on PlayFab services, automated events, database changes and general gameplay.",
+        },
+        {
+          title: "Sensations ASMR",
+          urlLink: "https://apps.apple.com/au/app/sensations-relaxing-games/id1530126991",
+          youtubeLink: undefined,
+          engine: "Unity",
+          target: ["IOS", "ANDROID"],
+          desciption:
+            "ASMR app that lets you cut, shave and manipulate objects. Made some general gameplay changes and bug fixes.",
+        },
+      ],
+      franchises: [],
+    },
+    {
+      title: "Chaos Theory Games",
+      role: "Mid Engineer",
+      startDate: "July 2021",
+      endDate: "April 2023",
+      panelImg: CTGPanelImg,
+      projects: [
+        {
+          title: "Crab God",
+          urlLink: "https://firesquid.games/games/crab-god",
+          youtubeLink: "https://www.youtube.com/watch?v=apuqVdMiZ9U",
+          engine: "Unity",
+          target: ["PC", "Steam"],
+          desciption:
+            "God game based on restoring an ocean reef. Made the Crabling Animation system, Day/Night Cycle and contributed to general game play.",
+        },
+        {
+          title: "Virtual Farm",
+          urlLink: "https://www.chaostheorygames.com/work/virtual-farm",
+          youtubeLink: undefined,
+          engine: "Unity",
+          target: ["PC", "Android"],
+          desciption:
+            "Interactive science exhibit made for the “Gateway to Science” Museum in North Dakota. Built to work with a large touch screen and RFID readers.",
+        },
+        {
+          title: "Virus Blaster",
+          urlLink: "https://www.chaostheorygames.com/work/virus-blaster",
+          youtubeLink: undefined,
+          engine: "Unity",
+          target: ["PC", "Android"],
+          desciption:
+            "Another “Gateway to Science” project. Took on the Lead Developer role to make a Puzzle game based on the process of creating a vaccine.",
+        },
+        {
+          title: "Seagull TV",
+          urlLink: "https://www.chaostheorygames.com/work/seagull-tv",
+          youtubeLink: undefined,
+          engine: "Unity",
+          target: ["PC", "Federation Square Melbourne"],
+          desciption:
+            "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
+        },
+        {
+          title: "PlayED",
+          urlLink: "https://www.played.com.au",
+          youtubeLink: undefined,
+          engine: "React, Typescipt",
+          target: ["Web"],
+          desciption:
+            "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
+        },
+      ],
+      franchises: [],
+    },
+    {
+      title: "SMG Studios",
+      role: "Contract Engineer",
+      startDate: "May 2023",
+      endDate: "Now!",
+      panelImg: SMGPanelImg,
+      projects: [
+        {
+          title: "Unreleased Title",
+          urlLink: undefined,
+          youtubeLink: undefined,
+          engine: "Unity",
+          target: [],
+          desciption: "Contracted to help with gameplay but branched into animation and asset importing.",
+        },
+      ],
+      franchises: [],
+    },
+  ],
+};
+
+export default WORK;
