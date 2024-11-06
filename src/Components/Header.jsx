@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SocialLinks from "./SocialLinks.jsx";
+import SocialLinks from "./ProjectComponents/SocialLinks.jsx";
 import { CenterTextContainer } from "./Utils.jsx";
 
 export default function Header() {

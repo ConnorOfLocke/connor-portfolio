@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
-import IconWrapper from "./IconWrapper";
+import IconWrapper from "../IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 
 export default function ProjectPanel({ project }) {

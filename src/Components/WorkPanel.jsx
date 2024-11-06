@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState, useContext, useEffect, useCallback } from "react";
 import WORK from "../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
-import ProjectList from "./ProjectList.jsx";
+import ProjectList from "./ProjectComponents/ProjectList.jsx";
 import { ThemeContext } from "styled-components";
 
 export default function WorkPanel() {

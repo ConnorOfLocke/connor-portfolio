@@ -1,6 +1,6 @@
 import { SocialIcon } from "react-social-icons";
 
-import SOCIALS from "../Assets/Data/Socials.js";
+import SOCIALS from "../../Assets/Data/Socials.js";
 import styled from "styled-components";
 import { ThemeContext } from "styled-components";
 
