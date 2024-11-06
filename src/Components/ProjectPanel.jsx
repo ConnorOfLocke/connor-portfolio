@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
-import { SlArrowRight, SlArrowDown } from "react-icons/sl";
+import IconWrapper from "./IconWrapper";
+import ProjectLinks from "./ProjectLinks";
 
 export default function ProjectPanel({ project }) {
   const [open, setIsOpen] = useState(false);
@@ -11,13 +12,16 @@ export default function ProjectPanel({ project }) {
 
   return (
     <ProjectContainer>
-      <ProjectTitleContainer onClick={handleTitleClick}>
-        <IconContainer>
-          {!open && <SlArrowRight size={"1rem"} />}
-          {open && <SlArrowDown size={"1rem"} />}
-        </IconContainer>
-        <ProjectTitle>{project.title}</ProjectTitle>
-      </ProjectTitleContainer>
+      <ProjectHeader>
+        <ProjectTitle onClick={handleTitleClick}>
+          <TitleContainer>
+            {!open && <IconWrapper iconID={"arrow-right"} size={"1rem"} />}
+            {open && <IconWrapper iconID={"arrow-down"} size={"1rem"} />}
+            <ProjectTitleText>{project.title}</ProjectTitleText>
+          </TitleContainer>
+        </ProjectTitle>
+        <ProjectLinks project={project} />
+      </ProjectHeader>
       {open && (
         <ProjectInfo>
           <p>{project.description}</p>
@@ -32,16 +36,21 @@ const ProjectContainer = styled.li`
   flex-direction: column;
 `;
 
-const ProjectTitle = styled.h2`
+const ProjectTitleText = styled.h2`
   margin-left: 1rem;
 `;
 
-const IconContainer = styled.div`
-  margin: auto 0;
-  display: block;
+const TitleContainer = styled.div`
+  display: flex;
 `;
 
-const ProjectTitleContainer = styled.button`
+const ProjectHeader = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const ProjectTitle = styled.button`
   background-color: ${(props) => props.theme.buttonBackgroundSelected};
   padding: 0;
   margin: 0;
@@ -49,10 +58,6 @@ const ProjectTitleContainer = styled.button`
   border-top: 1px solid ${(props) => props.theme.buttonBorderColor};
   padding-left: 1rem;
   width: 100%;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  align-content: center;
 
   & :hover {
     font-style: italic;
