@@ -1,23 +1,40 @@
 import styled from "styled-components";
-import { useRef, useState, useContext } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import WORK from "../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "./ProjectList.jsx";
 import { ThemeContext } from "styled-components";
 
 export default function WorkPanel() {
-  const gridRef = useRef();
   const themeContext = useContext(ThemeContext);
 
   const [selectedWorkplaceTitle, setSelectedWorkplaceTitle] = useState(null);
+  const [columns, setColumns] = useState(1);
 
   const workplaceDataIndex = WORK.workplaces.findIndex((place) => place.title === selectedWorkplaceTitle);
   const workplaceData = WORK.workplaces[workplaceDataIndex];
 
-  const columns = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches ? 2 : 1;
+  //Resize the grid columns
+  const handleResize = useCallback(() => {
+    setColumns((prevColumns) => {
+      const newColumns = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches ? 2 : 1;
+      return newColumns !== prevColumns ? newColumns : prevColumns;
+    });
+  }, [themeContext]);
+
+  //call it on load
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
+
+  useEffect(() => {
+    const listener = window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", listener);
+    };
+  }, [handleResize]);
 
   function handleWorkplaceSelected(workplace) {
-    console.log(`setting ${selectedWorkplaceTitle} to ${workplace}`);
     setSelectedWorkplaceTitle(workplace);
   }
 
@@ -26,7 +43,7 @@ export default function WorkPanel() {
       <WorkplacePanel
         key={work.title}
         workplace={work}
-        selected={work.title === selectedWorkplaceTitle}
+        $selected={work.title === selectedWorkplaceTitle}
         onClick={() => {
           handleWorkplaceSelected(work.title);
         }}
@@ -36,7 +53,7 @@ export default function WorkPanel() {
 
   //emplace the project list
   if (workplaceData) {
-    const index = Math.floor(workplaceDataIndex / columns) + columns;
+    const index = Math.floor(workplaceDataIndex / columns) + 2;
 
     workplaceList.push(
       <ProjectList
@@ -48,15 +65,16 @@ export default function WorkPanel() {
     );
   }
 
-  return <WorkPanelGrid ref={gridRef}>{workplaceList}</WorkPanelGrid>;
+  return <WorkPanelGrid>{workplaceList}</WorkPanelGrid>;
 }
 
 const WorkPanelGrid = styled.div`
   background-color: ${(props) => props.theme.foreground};
   display: grid;
-  margin-top: 2rem;
   justify-content: center;
+  margin: 2rem 0;
 
+  grid-template-columns: auto;
   @media (min-width: ${(props) => props.theme.mediumScreen}) {
     grid-template-columns: auto auto;
   }
