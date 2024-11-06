@@ -11,8 +11,10 @@ export default function WorkPanel() {
   const [selectedWorkplaceTitle, setSelectedWorkplaceTitle] = useState(null);
   const [columns, setColumns] = useState(1);
 
-  const workplaceDataIndex = WORK.workplaces.findIndex((place) => place.title === selectedWorkplaceTitle);
-  const workplaceData = WORK.workplaces[workplaceDataIndex];
+  const WorkplacesData = [...WORK.workplaces].reverse();
+
+  const workplaceDataIndex = WorkplacesData.findIndex((place) => place.title === selectedWorkplaceTitle);
+  const workplaceData = WorkplacesData[workplaceDataIndex];
 
   //Resize the grid columns
   const handleResize = useCallback(() => {
@@ -38,7 +40,7 @@ export default function WorkPanel() {
     setSelectedWorkplaceTitle(workplace);
   }
 
-  const workplaceList = WORK.workplaces.map((work) => {
+  const workplaceList = WorkplacesData.map((work) => {
     return (
       <WorkplacePanel
         key={work.title}

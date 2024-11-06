@@ -4,9 +4,10 @@ const THEME = {
   background: "red",
   foreground: "blue",
   buttonBackground: "aliceblue",
+  buttonBorderColor: "lightgray",
   buttonBackgroundSelected: "antiquewhite",
   headerHeight: "10rem",
-  contentMargin: "0 10rem",
+  contentMargin: "0 8rem",
   minContentwidth: "24rem",
   maxContentwidth: "60rem",
 };

@@ -19,7 +19,7 @@ const WORK = {
           youtubeLink: "https://youtu.be/wCAZRRrPEzg",
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          desciption:
+          description:
             "Arcade rhythm game - First studio project! Made 3 additional levels with new mechanics and some light modeling. Eventually was bought and reworked by a separate company.",
         },
         {
@@ -105,7 +105,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=j5VFRdhYydo",
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4", "IOS", "ANDROID"],
-          desciption:
+          description:
             "Game adaptation of the Colin Thiele’s Book. First game I worked on that was ported to Switch, XboxOne and PS4. Lotta Addressable Asset debugging",
         },
         {
@@ -114,7 +114,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=1aSo4gbXUCY",
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          desciption: "Third-Person Mech fighter. Was able to optimize, localize and port it to consoles.",
+          description: "Third-Person Mech fighter. Was able to optimize, localize and port it to consoles.",
         },
         {
           title: "Infinite: Beyond the Mind",
@@ -122,7 +122,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=JMalnJlGpEY",
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          desciption:
+          description:
             "Side Scrolling Brawler - First porting job using GameMaker. Ported to consoles and localized it into several languages. ",
         },
         {
@@ -131,7 +131,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=EQw_CpQLc-k",
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          desciption: "Kirby inspired 2D platformer. Like the infinite, Ported to consoles and made localized it.",
+          description: "Kirby inspired 2D platformer. Like the infinite, Ported to consoles and made localized it.",
         },
         {
           title: "Minesweeper Genius",
@@ -139,7 +139,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=Ksjo0CA3B60",
           engine: "Unity",
           target: ["SWITCH", "XBOXONE", "PS4"],
-          desciption:
+          description:
             "Neat Puzzle Game! Was able to lead the porting job to translate the touch controls to controller input and localize it to several languages.",
         },
         {
@@ -148,7 +148,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=uMnBUbLUKGo",
           engine: "Unity",
           target: ["IOS", "ANDROID", "WebGL"],
-          desciption:
+          description:
             "Ongoing project for Scholastic. Was put in charge on integrating minigames, general gameplay and dialogue.",
         },
         {
@@ -157,7 +157,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=053J1i-zwMg",
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          desciption: "2D Platformer - Setup the porting, localization and DLC for Consoles.",
+          description: "2D Platformer - Setup the porting, localization and DLC for Consoles.",
         },
         {
           title: "Easy Bill Pay",
@@ -165,7 +165,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "C# and HTML",
           target: ["IOS", "ANDROID", "WEB"],
-          desciption: "Application to help automate paying bills and sending out funds.",
+          description: "Application to help automate paying bills and sending out funds.",
         },
       ],
       franchises: [],
@@ -183,7 +183,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          desciption:
+          description:
             "Auto-Battler based on the Animal Kingdom. I was put in change of implementing special abilities, AB testing services, Analytics and visual effects.",
         },
         {
@@ -192,7 +192,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          desciption:
+          description:
             "Online competitive equestrian game. I got to work on PlayFab services, automated events, database changes and general gameplay.",
         },
         {
@@ -201,7 +201,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          desciption:
+          description:
             "ASMR app that lets you cut, shave and manipulate objects. Made some general gameplay changes and bug fixes.",
         },
       ],
@@ -220,7 +220,7 @@ const WORK = {
           youtubeLink: "https://www.youtube.com/watch?v=apuqVdMiZ9U",
           engine: "Unity",
           target: ["PC", "Steam"],
-          desciption:
+          description:
             "God game based on restoring an ocean reef. Made the Crabling Animation system, Day/Night Cycle and contributed to general game play.",
         },
         {
@@ -229,7 +229,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "Unity",
           target: ["PC", "Android"],
-          desciption:
+          description:
             "Interactive science exhibit made for the “Gateway to Science” Museum in North Dakota. Built to work with a large touch screen and RFID readers.",
         },
         {
@@ -238,7 +238,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "Unity",
           target: ["PC", "Android"],
-          desciption:
+          description:
             "Another “Gateway to Science” project. Took on the Lead Developer role to make a Puzzle game based on the process of creating a vaccine.",
         },
         {
@@ -247,7 +247,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "Unity",
           target: ["PC", "Federation Square Melbourne"],
-          desciption:
+          description:
             "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
         },
         {
@@ -256,7 +256,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "React, Typescipt",
           target: ["Web"],
-          desciption:
+          description:
             "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
         },
       ],
@@ -275,7 +275,7 @@ const WORK = {
           youtubeLink: undefined,
           engine: "Unity",
           target: [],
-          desciption: "Contracted to help with gameplay but branched into animation and asset importing.",
+          description: "Contracted to help with gameplay but branched into animation and asset importing.",
         },
       ],
       franchises: [],

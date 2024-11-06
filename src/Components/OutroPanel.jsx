@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export default function OutroPanel() {
   return (
-    <IntroPanelContainer>
+    <OutroPanelContainer>
       <p>Meowdty</p>
-    </IntroPanelContainer>
+    </OutroPanelContainer>
   );
 }
 
-const IntroPanelContainer = styled.div`
+const OutroPanelContainer = styled.div`
   margin-top: 2rem;
   height: auto;
   background-color: ${(props) => props.theme.foreground};

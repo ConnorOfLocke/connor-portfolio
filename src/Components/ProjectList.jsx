@@ -13,6 +13,8 @@ export default function ProjectList({ workplace, ...props }) {
 
 const ProjectListContainer = styled.ol`
   list-style: none;
+  padding: 0;
+  margin: 0;
   grid-row: ${(props) => props.$gridRow};
   grid-column: 1 / span ${(props) => props.$columns};
 `;
