@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { useState } from "react";
-import IconWrapper from "../IconWrapper";
+import IconWrapper from "../../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
+import { ProjectVideo } from "./ProjectVideo";
+import { SubtitleText } from "../../Utils/Utils";
 
 export default function ProjectPanel({ project }) {
   const [open, setIsOpen] = useState(false);
@@ -24,7 +26,8 @@ export default function ProjectPanel({ project }) {
       </ProjectHeader>
       {open && (
         <ProjectInfo>
-          <p>{project.description}</p>
+          {project.youtubeLink && <ProjectVideo project={project} />}
+          <SubtitleText>{project.description}</SubtitleText>
         </ProjectInfo>
       )}
     </ProjectContainer>
@@ -66,5 +69,6 @@ const ProjectTitle = styled.button`
 
 const ProjectInfo = styled.div`
   background-color: ${(props) => props.theme.light.offWhite};
-  padding: 2rem;
+  padding: 0.5rem 2rem 2rem 2rem;
+  border-radius: ${(props) => props.theme.borderRadiusUpperTab};
 `;

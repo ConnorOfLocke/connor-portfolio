@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 import THEME from "./Assets/Data/Theme.js";
 import Header from "./Components/Header";
 import IntroPanel from "./Components/IntroPanel.jsx";
-import WorkPanel from "./Components/WorkPanel.jsx";
+import WorkPanel from "./Components/Work/WorkPanel.jsx";
 import OutroPanel from "./Components/OutroPanel.jsx";
 
 function App() {

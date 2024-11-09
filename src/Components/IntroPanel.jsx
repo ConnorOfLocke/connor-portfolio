@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProfileFace from "../Assets/Images/profile-face.jpg";
-import { HeaderText, SubtitleText } from "./Utils";
+import { HeaderText, SubtitleText } from "./Utils/Utils";
 
 export default function IntroPanel() {
   return (
@@ -23,10 +23,18 @@ const IntroPanelContainer = styled.div`
   background-color: ${(props) => props.theme.light.tertiary_trans};
   display: flex;
   border-radius: ${(props) => props.theme.borderRadius};
+  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
 `;
 
 const ProfileImage = styled.img`
   height: 28rem;
+
+  @media (max-width: ${(props) => props.theme.mediumScreen}) {
+    height: 18rem;
+  }
+  @media (max-width: ${(props) => props.theme.smallScreen}) {
+    height: 12rem;
+  }
   width: fit-content;
   padding: 1rem;
   border-radius: 4rem;

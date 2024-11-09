@@ -244,7 +244,7 @@ const WORK = {
         {
           title: "Seagull TV",
           urlLink: "https://www.chaostheorygames.com/work/seagull-tv",
-          youtubeLink: undefined,
+          youtubeLink: "https://www.youtube.com/watch?v=HVh33W5izCY",
           engine: "Unity",
           target: ["PC", "Federation Square Melbourne"],
           description:

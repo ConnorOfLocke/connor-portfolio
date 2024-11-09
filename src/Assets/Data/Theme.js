@@ -27,6 +27,8 @@ const THEME = {
   minContentwidth: "28rem",
   maxContentwidth: "80rem",
   borderRadius: "4rem",
+  borderRadiusUpperTab: "0 0 4rem 4rem",
+  borderRadiusLowerTab: "4rem 4rem 0 0",
 
   light: {
     primary: "transparent",

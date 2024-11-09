@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { useState, useContext, useEffect, useCallback } from "react";
-import WORK from "../Assets/Data/Work.js";
+import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
-import ProjectList from "./ProjectComponents/ProjectList.jsx";
+import ProjectList from "./Project/ProjectList.jsx";
 import { ThemeContext } from "styled-components";
-import { CenterTextContainer, SubtitleText } from "./Utils.jsx";
+import { CenterTextContainer, SubtitleText } from "../Utils/Utils.jsx";
 
 export default function WorkPanel() {
   const themeContext = useContext(ThemeContext);

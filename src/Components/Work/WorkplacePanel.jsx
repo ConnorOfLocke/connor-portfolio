@@ -22,7 +22,8 @@ const WorkplaceImageButtonContainer = styled.button`
   flex-direction: column;
   align-items: stretch;
   min-width: 320px;
-  border-radius: ${(props) => props.theme.borderRadius};
+
+  border-radius: ${(props) => (props.$selected ? props.theme.borderRadiusLowerTab : props.theme.borderRadius)};
 
   background-color: ${(props) => (props.$selected ? props.theme.light.offWhite : props.theme.light.offWhite)};
 

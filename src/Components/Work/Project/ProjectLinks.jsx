@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import IconWrapper from "../IconWrapper";
+import IconWrapper from "../../Utils/IconWrapper";
 
 export default function ProjectLinks({ project }) {
   const isUnity = project.engine === "Unity";
