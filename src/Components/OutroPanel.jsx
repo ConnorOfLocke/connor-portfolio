@@ -11,6 +11,6 @@ export default function OutroPanel() {
 const OutroPanelContainer = styled.div`
   margin-top: 2rem;
   height: auto;
-  background-color: ${(props) => props.theme.foreground};
+  background-color: ${(props) => props.theme.light.tertiary_trans};
   display: flex;
 `;

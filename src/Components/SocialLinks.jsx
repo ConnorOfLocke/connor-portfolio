@@ -1,6 +1,6 @@
 import { SocialIcon } from "react-social-icons";
 
-import SOCIALS from "../../Assets/Data/Socials.js";
+import SOCIALS from "../Assets/Data/Socials.js";
 import styled from "styled-components";
 import { ThemeContext } from "styled-components";
 
@@ -33,7 +33,17 @@ export default function SocialLinks() {
     <SocialList>
       {SOCIALS.map((social) => (
         <SocialListItem key={social.id}>
-          <SocialIcon url={social.url} label={social.id} style={{ width: buttonSize, height: buttonSize }} />
+          <SocialIcon
+            url={social.url}
+            label={social.id}
+            style={{
+              width: buttonSize,
+              height: buttonSize,
+              label: social.id,
+              bgColor: themeContext.light.socialBgColor,
+              fgColor: themeContext.light.socialFgColor,
+            }}
+          />
         </SocialListItem>
       ))}
     </SocialList>

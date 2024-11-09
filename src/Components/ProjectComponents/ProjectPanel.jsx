@@ -51,11 +51,11 @@ const ProjectHeader = styled.div`
 `;
 
 const ProjectTitle = styled.button`
-  background-color: ${(props) => props.theme.buttonBackgroundSelected};
+  background-color: ${(props) => props.theme.light.offWhite};
   padding: 0;
   margin: 0;
   border: 0;
-  border-top: 1px solid ${(props) => props.theme.buttonBorderColor};
+  border-top: 1px solid ${(props) => props.theme.light.buttonBorderColor};
   padding-left: 1rem;
   width: 100%;
 
@@ -65,5 +65,6 @@ const ProjectTitle = styled.button`
 `;
 
 const ProjectInfo = styled.div`
+  background-color: ${(props) => props.theme.light.offWhite};
   padding: 2rem;
 `;

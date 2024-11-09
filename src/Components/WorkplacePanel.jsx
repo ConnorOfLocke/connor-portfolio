@@ -22,18 +22,17 @@ const WorkplaceImageButtonContainer = styled.button`
   flex-direction: column;
   align-items: stretch;
   min-width: 320px;
+  border-radius: ${(props) => props.theme.borderRadius};
 
-  background: ${(props) => (props.$selected ? props.theme.buttonBackgroundSelected : props.theme.buttonBackground)};
+  background-color: ${(props) => (props.$selected ? props.theme.light.offWhite : props.theme.light.offWhite)};
 
   ${(props) => props.$selected && `font-style: italic;`};
-
-  &:hover {
-    font-style: italic;
-  }
 `;
 
 const TextArea = styled.div`
   width: auto;
 `;
 
-const WorkplaceImage = styled.img``;
+const WorkplaceImage = styled.img`
+  border-radius: ${(props) => props.theme.borderRadius};
+`;

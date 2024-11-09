@@ -4,6 +4,7 @@ import WORK from "../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "./ProjectComponents/ProjectList.jsx";
 import { ThemeContext } from "styled-components";
+import { CenterTextContainer, SubtitleText } from "./Utils.jsx";
 
 export default function WorkPanel() {
   const themeContext = useContext(ThemeContext);
@@ -67,14 +68,23 @@ export default function WorkPanel() {
     );
   }
 
-  return <WorkPanelGrid>{workplaceList}</WorkPanelGrid>;
+  return (
+    <WorkPanelContainer>
+      <CenterTextContainer>
+        <SubtitleText>Check out the places I've worked at</SubtitleText>
+      </CenterTextContainer>
+      <WorkPanelGrid>{workplaceList}</WorkPanelGrid>
+    </WorkPanelContainer>
+  );
 }
 
+const WorkPanelContainer = styled.div`
+  margin: 2rem 0;
+`;
+
 const WorkPanelGrid = styled.div`
-  background-color: ${(props) => props.theme.foreground};
   display: grid;
   justify-content: center;
-  margin: 2rem 0;
 
   grid-template-columns: auto;
   @media (min-width: ${(props) => props.theme.mediumScreen}) {

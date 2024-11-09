@@ -1,25 +1,19 @@
 import styled from "styled-components";
-import SocialLinks from "./ProjectComponents/SocialLinks.jsx";
-import { CenterTextContainer } from "./Utils.jsx";
+import SocialLinks from "./SocialLinks.jsx";
+import { CenterTextContainer, HeaderText } from "./Utils.jsx";
 
 export default function Header() {
   return (
     <HeaderContainer>
       <HeaderContainerContent>
         <CenterTextContainer>
-          <NameText>Connor Locke-Warburton</NameText>
+          <HeaderText>Connor Locke-Warburton</HeaderText>
         </CenterTextContainer>
         <SocialLinks />
       </HeaderContainerContent>
     </HeaderContainer>
   );
 }
-
-const NameText = styled.h1`
-  @media (max-width: ${(props) => props.theme.smallScreen}) {
-    font-size: 22px;
-  }
-`;
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -28,7 +22,7 @@ const HeaderContainer = styled.header`
   justify-content: center;
 
   position: fixed;
-  background-color: green;
+  background-color: ${(props) => props.theme.light.headerColor};
 `;
 
 const HeaderContainerContent = styled.header`

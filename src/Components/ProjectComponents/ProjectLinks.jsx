@@ -53,6 +53,6 @@ const LinkContainer = styled.div`
   display: flex;
   min-width: auto;
   padding: 0 1rem;
-  background-color: ${(props) => props.theme.buttonBackground};
-  border-top: 1px solid ${(props) => props.theme.buttonBorderColor};
+  background-color: ${(props) => props.theme.light.offWhite};
+  border-top: 1px solid ${(props) => props.theme.light.buttonBorderColor};
 `;

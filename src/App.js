@@ -22,9 +22,10 @@ function App() {
 
 const AppContainer = styled.div`
   width: 100%;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${(props) => props.theme.light.primary};
   display: flex;
   justify-content: center;
+  background-image: url(${(props) => props.theme.light.backgroundImage});
 `;
 
 const Main = styled.div`
