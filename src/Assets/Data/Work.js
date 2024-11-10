@@ -4,8 +4,8 @@ import PlaysidePanelImg from "../Images/playside-panel.png";
 import CTGPanelImg from "../Images/ctg-panel.png";
 import SMGPanelImg from "../Images/smg-panel.png";
 
-import BraveheatVid from "../Video/Bravehearts.mp4";
-import IPGOVid from "../Video/IPGO.mp4";
+//import BraveheartVid from "../Video/Bravehearts.mp4";
+//import IPGOVid from "../Video/IPGO.mp4";
 import VirtualFarmVid from "../Video/VirtualFarm.mp4";
 import VirusBlasterVid from "../Video/VirusBlaster.mp4";
 import PlayEdVid from "../Video/PlayEd.mp4";
