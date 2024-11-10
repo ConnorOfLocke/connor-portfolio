@@ -29,7 +29,15 @@ const AppContainer = styled.div`
 `;
 
 const Main = styled.div`
-  padding-top: ${(props) => props.theme.headerHeight};
+  padding-top: ${(props) => props.theme.largeHeaderHeight};
+
+  @media (max-width: ${(props) => props.theme.mediumScreen}) {
+    padding-top: ${(props) => props.theme.mediumHeaderHeight};
+  }
+  @media (max-width: ${(props) => props.theme.smallScreen}) {
+    padding-top: ${(props) => props.theme.smallHeaderHeight};
+  }
+
   margin: ${(props) => props.theme.contentMargin};
   width: 100%;
   min-width: ${(props) => props.theme.minContentwidth};
