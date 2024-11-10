@@ -20,9 +20,13 @@ const ColorRichBlack = "rgba(1, 28, 39)";
 const ColorOffWhite = "rgba(255,251,245)";
 
 const THEME = {
-  smallScreen: "700px",
+  smallScreen: "800px",
   mediumScreen: "1080px",
-  headerHeight: "10rem",
+
+  largeHeaderHeight: "10rem",
+  mediumHeaderHeight: "8rem",
+  smallHeaderHeight: "6rem",
+
   contentMargin: "0 8rem",
   minContentwidth: "28rem",
   maxContentwidth: "80rem",

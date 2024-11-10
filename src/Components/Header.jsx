@@ -17,7 +17,15 @@ export default function Header() {
 
 const HeaderContainer = styled.header`
   width: 100%;
-  height: ${(props) => props.theme.headerHeight};
+
+  height: ${(props) => props.theme.largeHeaderHeight};
+
+  @media (max-width: ${(props) => props.theme.mediumScreen}) {
+    height: ${(props) => props.theme.mediumHeaderHeight};
+  }
+  @media (max-width: ${(props) => props.theme.smallScreen}) {
+    height: ${(props) => props.theme.smallHeaderHeight};
+  }
   display: flex;
   justify-content: center;
 

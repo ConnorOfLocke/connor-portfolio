@@ -26,7 +26,7 @@ export default function ProjectPanel({ project }) {
       </ProjectHeader>
       {open && (
         <ProjectInfo>
-          {project.youtubeLink && <ProjectVideo project={project} />}
+          <ProjectVideo project={project} />
           <SubtitleText>{project.description}</SubtitleText>
         </ProjectInfo>
       )}

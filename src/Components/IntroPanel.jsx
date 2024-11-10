@@ -6,13 +6,13 @@ export default function IntroPanel() {
   return (
     <IntroPanelContainer>
       <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
-      <div>
+      <TextContainer>
         <HeaderText>Games Developer with +8 Years of experience.</HeaderText>
         <SubtitleText>
           Contributed to projects on IOS, Android, PC, Switch, XBoxOne, PS4, TVOS, Table Touch Screens and the large
           screen in Melbourne Federation Square!
         </SubtitleText>
-      </div>
+      </TextContainer>
     </IntroPanelContainer>
   );
 }
@@ -24,6 +24,10 @@ const IntroPanelContainer = styled.div`
   display: flex;
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
+`;
+
+const TextContainer = styled.div`
+  padding-right: 1rem;
 `;
 
 const ProfileImage = styled.img`
