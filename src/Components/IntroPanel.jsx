@@ -23,7 +23,7 @@ const IntroPanelContainer = styled.div`
   background-color: ${(props) => props.theme.light.tertiary_trans};
   display: flex;
   border-radius: ${(props) => props.theme.borderRadius};
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
+  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
 `;
 
 const TextContainer = styled.div`

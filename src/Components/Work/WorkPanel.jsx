@@ -85,6 +85,7 @@ const WorkPanelContainer = styled.div`
 const WorkPanelGrid = styled.div`
   display: grid;
   justify-content: center;
+  gap: 2rem;
 
   grid-template-columns: auto;
   @media (min-width: ${(props) => props.theme.mediumScreen}) {

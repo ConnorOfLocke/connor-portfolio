@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import IconWrapper from "../../Utils/IconWrapper";
+import LinkButton from "../../Utils/LinkButton";
 
 export default function ProjectLinks({ project }) {
   const isUnity = project.engine === "Unity";
@@ -31,13 +32,35 @@ export default function ProjectLinks({ project }) {
         {isPC && <IconWrapper iconID={"pc"} size={midSize} />}
         {isWebGl && <IconWrapper iconID={"webgl"} size={midSize} />}
         {isWeb && <IconWrapper iconID={"web"} size={midSize} />}
+        {project.target.length <= 0 && <IconWrapper iconID={"mystery"} size={midSize} />}
       </IconRow>
       <VerticalSeperator />
-
-      <IconWrapper iconID={"link"} size={largeSize} />
+      <StyledLinkButton urlLink={project.urlLink} target="_blank" rel="noopener noopener">
+        <IconWrapper iconID={"link"} size={largeSize} />
+      </StyledLinkButton>
     </LinkContainer>
   );
 }
+
+const StyledLinkButton = styled(LinkButton)`
+  display: flex;
+  justify-content: center;
+
+  color: ${(props) => props.theme.light.ColorRichBlack};
+  //transform: scale(1);
+
+  & :hover {
+    color: ${(props) => props.theme.light.socialFgColor};
+    /*-webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);*/
+  }
+
+  & :visited {
+    color: green;
+  }
+`;
 
 const IconRow = styled.div`
   display: flex;

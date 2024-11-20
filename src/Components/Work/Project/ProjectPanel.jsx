@@ -68,7 +68,5 @@ const ProjectTitle = styled.button`
 `;
 
 const ProjectInfo = styled.div`
-  background-color: ${(props) => props.theme.light.offWhite};
   padding: 0.5rem 2rem 2rem 2rem;
-  border-radius: ${(props) => props.theme.borderRadiusUpperTab};
 `;

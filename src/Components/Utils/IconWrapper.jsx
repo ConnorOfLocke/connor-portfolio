@@ -5,6 +5,7 @@ import { SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { SiGamemaker, SiWebgl } from "react-icons/si";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaComputer } from "react-icons/fa6";
+import { TbDeviceDesktopQuestion } from "react-icons/tb";
 
 const iconPairs = [
   { id: "unity", icon: FaUnity },
@@ -20,6 +21,7 @@ const iconPairs = [
   { id: "webgl", icon: SiWebgl },
   { id: "react", icon: FaReact },
   { id: "web", icon: FaInternetExplorer },
+  { id: "mystery", icon: TbDeviceDesktopQuestion },
 ];
 
 export default function IconWrapper({ iconID, ...props }) {

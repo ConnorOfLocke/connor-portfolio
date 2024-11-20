@@ -22,7 +22,7 @@ const WORK = {
         {
           title: "Rolling Sky",
           urlLink: "https://apps.apple.com/us/app/rolling-sky/id1036661603",
-          youtubeLink: "https://youtu.be/wCAZRRrPEzg",
+          youtubeLink: "https://www.youtube.com/watch?v=wCAZRRrPEzg",
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
@@ -303,7 +303,7 @@ const WORK = {
           urlLink: undefined,
           youtubeLink: undefined,
           otherVideoLink: undefined,
-          engine: undefined,
+          engine: "Unity",
           target: [],
           description: "Contracted to help with gameplay but branched into animation and asset importing.",
         },

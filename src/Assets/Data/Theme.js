@@ -1,10 +1,15 @@
 import BackgroundDark from "../Images/Backgrounds/denim.webp";
 import BackgroundLight from "../Images/Backgrounds/seamless_paper_texture.png";
 
-//Gazzah Pink : rgba(245, 120, 244, 0.3)
-//Gazzah Yellow : rgba(244 241 79, 0.3)
-//Gazzah green : rgba(110, 228, 120, 0.3)
+//Gazzah Pink : rgba(245, 120, 244, 0.3) //F578E0
+//Gazzah Yellow : rgba(244 241 79, 0.3) //F4F14F
+//Gazzah green : rgba(110, 228, 120, 0.3) //6EE478
 //Gazzah Background : rgba(17, 64, 54, 0.3)
+//Gazzah Grey : C8C8C8
+//Gazzah outline: 737373
+// Gazzah Outline Black
+//Gazzah Mouth: F25C94
+//Gazza Tounge: DD5487
 
 //Paper : rgba(228, 226, 217)
 
@@ -31,14 +36,13 @@ const THEME = {
   minContentwidth: "28rem",
   maxContentwidth: "80rem",
   borderRadius: "4rem",
-  borderRadiusUpperTab: "0 0 4rem 4rem",
-  borderRadiusLowerTab: "4rem 4rem 0 0",
 
   light: {
     primary: "transparent",
     headerColor: ColorAlabaster,
     socialBgColor: ColorRichBlack,
     socialFgColor: ColorAlabaster,
+    tertiaryLighter: ColorPlum,
     tertiary: ColorPlum,
     tertiary_trans: ColorPlum_a,
     offWhite: ColorOffWhite,
@@ -46,7 +50,7 @@ const THEME = {
     buttonBorderColor: ColorAlabaster_a,
     buttonBackgroundSelected: "antiquewhite",
     backgroundImage: BackgroundLight,
-    headerTextColor: ColorRichBlack,
+    primaryTextColor: ColorRichBlack,
   },
 
   dark: {

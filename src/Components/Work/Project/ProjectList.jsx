@@ -13,8 +13,11 @@ export default function ProjectList({ workplace, ...props }) {
 
 const ProjectListContainer = styled.ol`
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 4rem 0;
+  margin: 2rem 0;
+  background-color: ${(props) => props.theme.light.tertiary_trans};
+  border-radius: ${(props) => props.theme.borderRadius};
   grid-row: ${(props) => props.$gridRow};
   grid-column: 1 / span ${(props) => props.$columns};
+  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
 `;
