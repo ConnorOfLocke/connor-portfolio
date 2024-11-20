@@ -30,7 +30,16 @@ const HeaderContainer = styled.header`
   justify-content: center;
 
   position: fixed;
-  background-color: ${(props) => props.theme.light.headerColor};
+  ${(props) => {
+    const mainColor = props.theme.light.headerColor;
+    const transColor = props.theme.light.headerColor_trans;
+    return `
+        background: ${mainColor};
+        background: -moz-linear-gradient(180deg, ${mainColor} 0%, ${mainColor} 97%, ${transColor} 100%);
+        background: -webkit-linear-gradient(180deg, ${mainColor} 0%, ${mainColor} 97%, ${transColor} 100%);
+        background: linear-gradient(180deg, ${mainColor} 0%, ${mainColor} 97%, ${transColor} 100%);        
+      `;
+  }};
 `;
 
 const HeaderContainerContent = styled.header`

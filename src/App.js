@@ -8,24 +8,33 @@ import OutroPanel from "./Components/OutroPanel.jsx";
 function App() {
   return (
     <ThemeProvider theme={THEME}>
-      <AppContainer>
-        <Header />
-        <Main>
-          <IntroPanel />
-          <WorkPanel />
-          <OutroPanel />
-        </Main>
-      </AppContainer>
+      <Background>
+        <AppContainer>
+          <Header />
+          <Main>
+            <IntroPanel />
+            <WorkPanel />
+            <OutroPanel />
+          </Main>
+        </AppContainer>
+      </Background>
     </ThemeProvider>
   );
 }
 
+const Background = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-image: url(${(props) => props.theme.light.backgroundImage});
+`;
+
 const AppContainer = styled.div`
   width: 100%;
+  height: 100%;
+  overflow-y: scroll;
   background-color: ${(props) => props.theme.light.primary};
   display: flex;
   justify-content: center;
-  background-image: url(${(props) => props.theme.light.backgroundImage});
 `;
 
 const Main = styled.div`

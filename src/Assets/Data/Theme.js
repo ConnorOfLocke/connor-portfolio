@@ -40,6 +40,7 @@ const THEME = {
   light: {
     primary: "transparent",
     headerColor: ColorAlabaster,
+    headerColor_trans: ColorAlabaster_a,
     socialBgColor: ColorRichBlack,
     socialFgColor: ColorAlabaster,
     tertiaryLighter: ColorPlum,
