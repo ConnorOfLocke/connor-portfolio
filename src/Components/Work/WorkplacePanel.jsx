@@ -22,10 +22,23 @@ const WorkplaceImageButtonContainer = styled.button`
   flex-direction: column;
   align-items: stretch;
   min-width: 320px;
-  border-radius: ${(props) => props.theme.borderRadius};
   background-color: ${(props) => props.theme.light.tertiary_trans};
+  transition: box-shadow 0.1s;
+
   ${(props) => props.$selected && `font-style: italic;`};
+
+  border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
+
+  ${(props) => props.$selected && `box-shadow: none;`};
+
+  &:hover {
+    box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.light.primaryTextColor};
+    ${(props) =>
+      props.$selected &&
+      `box-shadow: none;
+  `};
+  }
 `;
 
 const TextArea = styled.div`

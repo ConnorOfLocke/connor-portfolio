@@ -19,5 +19,4 @@ const ProjectListContainer = styled.ol`
   border-radius: ${(props) => props.theme.borderRadius};
   grid-row: ${(props) => props.$gridRow};
   grid-column: 1 / span ${(props) => props.$columns};
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
 `;

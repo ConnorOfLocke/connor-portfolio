@@ -24,12 +24,10 @@ export default function ProjectPanel({ project }) {
         </ProjectTitle>
         <ProjectLinks project={project} />
       </ProjectHeader>
-      {open && (
-        <ProjectInfo>
-          <ProjectVideo project={project} />
-          <SubtitleText>{project.description}</SubtitleText>
-        </ProjectInfo>
-      )}
+      <ProjectInfo $isOpen={open}>
+        <ProjectVideo project={project} />
+        <SubtitleText>{project.description}</SubtitleText>
+      </ProjectInfo>
     </ProjectContainer>
   );
 }
@@ -68,5 +66,10 @@ const ProjectTitle = styled.button`
 `;
 
 const ProjectInfo = styled.div`
-  padding: 0.5rem 2rem 2rem 2rem;
+  transition: opacity 1s;
+
+  opacity: ${(props) => (props.$isOpen ? "1" : "0")};
+  padding: ${(props) => (props.$isOpen ? "0.5rem 2rem 2rem 2rem" : "0")};
+  height: ${(props) => (props.$isOpen ? "100%" : "0")};
+  visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
 `;

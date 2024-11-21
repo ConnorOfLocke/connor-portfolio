@@ -8,7 +8,7 @@ export default function SocialLinks() {
     <SocialList>
       {SOCIALS.map((social) => (
         <SocialListItem key={social.id}>
-          <LinkButton urlLink={social.url}>
+          <LinkButton urlLink={social.url} target="_blank" rel="noopener noopener">
             <SocialIcon socialId={social.id} />
           </LinkButton>
         </SocialListItem>
