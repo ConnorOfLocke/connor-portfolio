@@ -1,11 +1,21 @@
 import styled from "styled-components";
-import { FaUnity, FaApple, FaXbox, FaPlaystation, FaReact, FaInternetExplorer } from "react-icons/fa";
-import { SlLink } from "react-icons/sl";
-import { SlArrowRight, SlArrowDown } from "react-icons/sl";
+import {
+  FaUnity,
+  FaApple,
+  FaXbox,
+  FaPlaystation,
+  FaReact,
+  FaInternetExplorer,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+import { FaBluesky } from "react-icons/fa6";
+import { SlLink, SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { SiGamemaker, SiWebgl } from "react-icons/si";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaComputer } from "react-icons/fa6";
 import { TbDeviceDesktopQuestion } from "react-icons/tb";
+import { MdEmail } from "react-icons/md";
 
 const iconPairs = [
   { id: "unity", icon: FaUnity },
@@ -22,6 +32,10 @@ const iconPairs = [
   { id: "react", icon: FaReact },
   { id: "web", icon: FaInternetExplorer },
   { id: "mystery", icon: TbDeviceDesktopQuestion },
+  { id: "github", icon: FaGithub },
+  { id: "email", icon: MdEmail },
+  { id: "linkedIn", icon: FaLinkedin },
+  { id: "bluesky", icon: FaBluesky },
 ];
 
 export default function IconWrapper({ iconID, ...props }) {

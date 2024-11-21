@@ -37,12 +37,13 @@ const THEME = {
   maxContentwidth: "80rem",
   borderRadius: "4rem",
 
+  black_transparent: "rbga(0,0,0,0)",
+
   light: {
     primary: "transparent",
     headerColor: ColorAlabaster,
     headerColor_trans: ColorAlabaster_a,
-    socialBgColor: ColorRichBlack,
-    socialFgColor: ColorAlabaster,
+    socialDefaultColor: ColorRichBlack,
     tertiaryLighter: ColorPlum,
     tertiary: ColorPlum,
     tertiary_trans: ColorPlum_a,
@@ -67,6 +68,13 @@ const THEME = {
     buttonBackgroundSelected: "antiquewhite",
     backgroundImage: BackgroundDark,
     headerTextColor: ColorRichBlack,
+  },
+
+  socialColors: {
+    github: "#171515",
+    linkedIn: "#0A66C1",
+    bluesky: "#1185FE",
+    email: "#101010",
   },
 };
 
