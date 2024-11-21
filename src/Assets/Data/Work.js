@@ -211,7 +211,7 @@ const WORK = {
         {
           title: "FEI Equestriad: World Tour",
           urlLink: "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
-          youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
+          youtubeLink: "https://www.youtube.com/watch?v=t84zWpA4EQo",
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
