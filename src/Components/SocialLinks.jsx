@@ -23,6 +23,7 @@ const SocialList = styled.ol`
   flex-direction: row;
   justify-content: right;
   align-items: center;
+  gap: 0.5rem;
 `;
 
 const SocialListItem = styled.li`

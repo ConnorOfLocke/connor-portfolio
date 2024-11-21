@@ -23,13 +23,11 @@ const WorkplaceImageButtonContainer = styled.button`
   align-items: stretch;
   min-width: 320px;
   background-color: ${(props) => props.theme.light.tertiary_trans};
-  transition: box-shadow 0.1s;
-
+  border-radius: ${(props) => props.theme.borderRadius};
   ${(props) => props.$selected && `font-style: italic;`};
 
-  border-radius: ${(props) => props.theme.borderRadius};
+  transition: box-shadow 0.1s;
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
-
   ${(props) => props.$selected && `box-shadow: none;`};
 
   &:hover {

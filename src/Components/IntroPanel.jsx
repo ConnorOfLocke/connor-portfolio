@@ -8,9 +8,10 @@ export default function IntroPanel() {
       <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
       <TextContainer>
         <HeaderText>Games Developer with +8 Years of experience.</HeaderText>
+        <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
-          Contributed to projects on IOS, Android, PC, Switch, XBoxOne, PS4, TVOS, Table Touch Screens and the large
-          screen in Melbourne Federation Square!
+          I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
+          Switch, XBoxOne, PS4, TVOS, Table Touch Screens and the large screen in Federation Square, Melbourne!
         </SubtitleText>
       </TextContainer>
     </IntroPanelContainer>

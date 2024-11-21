@@ -71,7 +71,9 @@ export default function WorkPanel() {
   return (
     <WorkPanelContainer>
       <CenterTextContainer>
-        <SubtitleText>Check out the places I've worked at</SubtitleText>
+        <SubtitleText>
+          Take a squizz! These are all the places I've worked at and the games I’ve had a part in making.
+        </SubtitleText>
       </CenterTextContainer>
       <WorkPanelGrid>{workplaceList}</WorkPanelGrid>
     </WorkPanelContainer>
