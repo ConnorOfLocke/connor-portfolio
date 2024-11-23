@@ -5,7 +5,9 @@ import { HeaderText, SubtitleText } from "./Utils/Utils";
 export default function IntroPanel() {
   return (
     <IntroPanelContainer>
-      <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
+      <ProfileContainer>
+        <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
+      </ProfileContainer>
       <TextContainer>
         <HeaderText>Games Developer with +8 Years of experience.</HeaderText>
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
@@ -20,15 +22,26 @@ export default function IntroPanel() {
 
 const IntroPanelContainer = styled.div`
   margin-top: 2rem;
+  padding: 0.5rem;
   height: auto;
   background-color: ${(props) => props.theme.light.tertiary_trans};
-  display: flex;
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
+
+  @media (min-width: ${(props) => props.theme.mediumScreen}) {
+    float: none;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+  }
 `;
 
 const TextContainer = styled.div`
-  padding-right: 1rem;
+  padding: 0 1rem;
+`;
+
+const ProfileContainer = styled.div`
+  float: inline-start;
 `;
 
 const ProfileImage = styled.img`

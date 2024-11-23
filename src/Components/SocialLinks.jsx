@@ -7,11 +7,11 @@ export default function SocialLinks() {
   return (
     <SocialList>
       {SOCIALS.map((social) => (
-        <SocialListItem key={social.id}>
+        <li key={social.id}>
           <LinkButton urlLink={social.url} target="_blank" rel="noopener noopener">
             <SocialIcon socialId={social.id} />
           </LinkButton>
-        </SocialListItem>
+        </li>
       ))}
     </SocialList>
   );
@@ -21,11 +21,6 @@ const SocialList = styled.ol`
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: right;
   align-items: center;
   gap: 0.5rem;
-`;
-
-const SocialListItem = styled.li`
-  margin: 0.25rem;
 `;

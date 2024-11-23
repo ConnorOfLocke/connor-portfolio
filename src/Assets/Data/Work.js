@@ -1,8 +1,14 @@
-import TurbochilliPanelImg from "../Images/turbochilli-panel.png";
-import BlowfishPanelImg from "../Images/blowfish-panel.png";
-import PlaysidePanelImg from "../Images/playside-panel.png";
-import CTGPanelImg from "../Images/ctg-panel.png";
-import SMGPanelImg from "../Images/smg-panel.png";
+import TurbochilliPanelimage from "../Images/turbochilli-panel.png";
+import BlowfishPanelimage from "../Images/blowfish-panel.png";
+import PlaysidePanelimage from "../Images/playside-panel.png";
+import CTGPanelimage from "../Images/ctg-panel.png";
+import SMGPanelimage from "../Images/smg-panel.png";
+
+import ASMRProjectImage1 from "../Images/ProjectImages/asmr1.png";
+import ASMRProjectImage2 from "../Images/ProjectImages/asmr2.png";
+import EasyBillProjectImage1 from "../Images/ProjectImages/bill1.png";
+import EasyBillProjectImage2 from "../Images/ProjectImages/bill2.png";
+import SMGProjectImage from "../Images/ProjectImages/smg_wallpaper.png";
 
 //import BraveheartVid from "../Video/Bravehearts.mp4";
 //import IPGOVid from "../Video/IPGO.mp4";
@@ -17,7 +23,7 @@ const WORK = {
       role: "Programmer",
       startDate: "July 2016",
       endDate: "August 2018",
-      panelImg: TurbochilliPanelImg,
+      panelImg: TurbochilliPanelimage,
       projects: [
         {
           title: "Rolling Sky",
@@ -26,8 +32,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
-            "Arcade rhythm game - First studio project! Made 3 additional levels with new mechanics and some light modeling. Eventually was bought and reworked by a separate company.",
+            "Arcade rhythm game - Very first released game! Made 3 additional levels with new mechanics and some light modeling. Eventually was bought and reworked by a separate company.",
         },
         {
           title: "Good Knight Story",
@@ -36,8 +43,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
-            "Action-Puzzle RPG for mobile. QA'd level progression, fixed bugs and eventually updated it for 64-bit IOS.",
+            "Action-Puzzle RPG for mobile. QA’d level progression, fixed bugs implemented analytics. Was eventually updated it for 64-bit IOS and Android.",
         },
         {
           title: "Stickman Surfer",
@@ -46,7 +54,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          description: "Infinite-Surfer Game. Was able to be part of the project through prototyping to release. ",
+          images: undefined,
+          description:
+            "Infinite-Surfer Game for mobile. On development through prototyping all the way to release. Added gameplay, monetization, localization, game services and analytics.",
         },
         {
           title: "Ghosts 'n Guns",
@@ -55,8 +65,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
-            "AR Arcade Shooter! First foray into making AR type games. Made to test out the IOS and Android AR functionality.",
+            "AR Arcade Shooter! First foray into making an Augmented Reality game using IOS and Android’s native libraries. ",
         },
         {
           title: "Unroll Me 2",
@@ -65,8 +76,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
-            "Block Puzzle Game. Programed gameplay, designed and created levels and created additional mechanics from the original.",
+            "Casual Block Puzzle Game. Programed new mechanics, gameplay, monetization, analytics and designed 800+ levels for the game.",
         },
         {
           title: "Up the Wall",
@@ -75,7 +87,8 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
-          description: "Perspective changing Arcade game. QA’d and programmed reward systems and analytics",
+          images: undefined,
+          description: "Perspective changing Arcade game. QA’d and programmed reward systems and analytics.",
         },
       ],
       franchises: [
@@ -101,6 +114,7 @@ const WORK = {
               youtubeLink: "https://www.youtube.com/watch?v=J2l01DxDHlE",
             },
           ],
+          images: undefined,
           description: "Ported and updated these games to wider 64-Bit IOS devices.",
         },
       ],
@@ -110,7 +124,7 @@ const WORK = {
       role: "Games Programmer",
       startDate: "August 2018",
       endDate: "April 2020",
-      panelImg: BlowfishPanelImg,
+      panelImg: BlowfishPanelimage,
       projects: [
         {
           title: "Storm Boy: The Game",
@@ -119,8 +133,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4", "IOS", "ANDROID"],
+          images: undefined,
           description:
-            "Game adaptation of the Colin Thiele’s Book. First game I worked on that was ported to Switch, XboxOne and PS4. Lotta Addressable Asset debugging",
+            "Game adaptation of the Colin Thiele’s Book to tie into the movie of this. First game I worked on that was ported to Switch, XboxOne and PS4.",
         },
         {
           title: "War Tech Fighters",
@@ -129,7 +144,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          description: "Third-Person Mech fighter. Was able to optimize, localize and port it to consoles.",
+          images: undefined,
+          description:
+            "Third-Person Mech fighter. In charge of optimizing, localizing and porting it to consoles. Expanded knowledge on the Post Processing Stack and Addressables.",
         },
         {
           title: "Infinite: Beyond the Mind",
@@ -138,8 +155,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          images: undefined,
           description:
-            "Side Scrolling Brawler - First porting job using GameMaker. Ported to consoles and localized it into several languages. ",
+            "Side Scrolling Brawler - First console porting job using GameMaker. Additionally localized it into several languages. ",
         },
         {
           title: "Whipseey and the Lost Atlas",
@@ -148,7 +166,8 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          description: "Kirby inspired 2D platformer. Like the infinite, Ported to consoles and made localized it.",
+          images: undefined,
+          description: "Kirby inspired 2D platformer. Like “Infinte”, Ported to consoles and localized it.",
         },
         {
           title: "Minesweeper Genius",
@@ -157,8 +176,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["SWITCH", "XBOXONE", "PS4"],
+          images: undefined,
           description:
-            "Neat Puzzle Game! Was able to lead the porting job to translate the touch controls to controller input and localize it to several languages.",
+            "Neat Puzzle Game! Was able to lead the porting job to translate the touch to controller input and localize it to several languages.",
         },
         {
           title: "Homebase",
@@ -167,8 +187,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID", "WebGL"],
+          images: undefined,
           description:
-            "Ongoing project for Scholastic. Was put in charge on integrating minigames, general gameplay and dialogue.",
+            "Ongoing project for Scholastic. Was put in charge of general gameplay, dialogue and implementing minigames delivered by a contracted company.",
         },
         {
           title: "JackQuest",
@@ -177,16 +198,19 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
-          description: "2D Platformer - Setup the porting, localization and DLC for Consoles.",
+          images: undefined,
+          description: "2D action platformer - Setup the porting, localization and ported the DLC for Consoles.",
         },
         {
           title: "Easy Bill Pay",
-          urlLink: "https://www.blowfishstudios.com/game/jack-quest/",
+          urlLink: "https://www.easybillpay.com.au/",
           youtubeLink: undefined,
           otherVideoLink: undefined,
           engine: undefined,
           target: ["IOS", "ANDROID", "Web"],
-          description: "Application to help automate paying bills and sending out funds.",
+          images: [EasyBillProjectImage1, EasyBillProjectImage2],
+          description:
+            "Application to help automate paying bills and sending out funds. Mostly front end development and QA.",
         },
       ],
       franchises: [],
@@ -196,7 +220,7 @@ const WORK = {
       role: "Mid Programmer",
       startDate: "September 2020",
       endDate: "July 2021",
-      panelImg: PlaysidePanelImg,
+      panelImg: PlaysidePanelimage,
       projects: [
         {
           title: "Animal Warfare",
@@ -205,6 +229,7 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
             "Auto-Battler based on the Animal Kingdom. I was put in change of implementing special abilities, AB testing services, Analytics and visual effects.",
         },
@@ -215,8 +240,9 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: undefined,
           description:
-            "Online competitive equestrian game. I got to work on PlayFab services, automated events, database changes and general gameplay.",
+            "Online competitive equestrian game. I worked on integrating PlayFab services, automated events, database changes and general gameplay. ",
         },
         {
           title: "Sensations ASMR",
@@ -225,6 +251,7 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["IOS", "ANDROID"],
+          images: [ASMRProjectImage1, ASMRProjectImage2],
           description:
             "ASMR app that lets you cut, shave and manipulate objects. Made some general gameplay changes and bug fixes.",
         },
@@ -236,7 +263,7 @@ const WORK = {
       role: "Mid Engineer",
       startDate: "July 2021",
       endDate: "April 2023",
-      panelImg: CTGPanelImg,
+      panelImg: CTGPanelimage,
       projects: [
         {
           title: "Crab God",
@@ -245,6 +272,7 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["PC", "Steam"],
+          images: undefined,
           description:
             "God game based on restoring an ocean reef. Made the Crabling Animation system, Day/Night Cycle and contributed to general game play.",
         },
@@ -255,6 +283,7 @@ const WORK = {
           otherVideoLink: VirtualFarmVid,
           engine: "Unity",
           target: ["PC", "Android"],
+          images: undefined,
           description:
             "Interactive science exhibit made for the “Gateway to Science” Museum in North Dakota. Built to work with a large touch screen and RFID readers.",
         },
@@ -265,6 +294,7 @@ const WORK = {
           otherVideoLink: VirusBlasterVid,
           engine: "Unity",
           target: ["PC", "Android"],
+          images: undefined,
           description:
             "Another “Gateway to Science” project. Took on the Lead Developer role to make a Puzzle game based on the process of creating a vaccine.",
         },
@@ -275,6 +305,7 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: ["PC", "Federation Square Melbourne"],
+          images: undefined,
           description:
             "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
         },
@@ -285,6 +316,7 @@ const WORK = {
           otherVideoLink: PlayEdVid,
           engine: "React",
           target: ["Web"],
+          images: undefined,
           description:
             "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
         },
@@ -295,8 +327,8 @@ const WORK = {
       title: "SMG Studios",
       role: "Contract Engineer",
       startDate: "May 2023",
-      endDate: "Now!",
-      panelImg: SMGPanelImg,
+      endDate: "Dec 2024",
+      panelImg: SMGPanelimage,
       projects: [
         {
           title: "Unreleased Title",
@@ -305,6 +337,7 @@ const WORK = {
           otherVideoLink: undefined,
           engine: "Unity",
           target: [],
+          images: [SMGProjectImage],
           description: "Contracted to help with gameplay but branched into animation and asset importing.",
         },
       ],

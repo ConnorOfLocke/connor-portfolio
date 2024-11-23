@@ -2,8 +2,13 @@ import styled from "styled-components";
 import { useState } from "react";
 import IconWrapper from "../../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
-import { ProjectVideo } from "./ProjectVideo";
+import ProjectVideo from "./ProjectVideo";
 import { SubtitleText } from "../../Utils/Utils";
+import ProjectImages from "./ProjectImages";
+
+function ProjectHasVideo(project) {
+  return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
+}
 
 export default function ProjectPanel({ project }) {
   const [open, setIsOpen] = useState(false);
@@ -25,12 +30,26 @@ export default function ProjectPanel({ project }) {
         <ProjectLinks project={project} />
       </ProjectHeader>
       <ProjectInfo $isOpen={open}>
-        <ProjectVideo project={project} />
+        <StyledProjectVideo>
+          {ProjectHasVideo(project) && <ProjectVideo project={project} />}
+          <ProjectImages project={project} />
+        </StyledProjectVideo>
         <SubtitleText>{project.description}</SubtitleText>
       </ProjectInfo>
     </ProjectContainer>
   );
 }
+
+const StyledProjectVideo = styled.div`
+  float: inline-start;
+  margin: 1rem 1rem 0 0;
+  @media (max-width: ${(props) => props.theme.mediumScreen}) {
+    float: none;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0 0 0;
+  }
+`;
 
 const ProjectContainer = styled.li`
   display: flex;

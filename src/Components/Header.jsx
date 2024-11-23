@@ -28,7 +28,7 @@ const HeaderContainer = styled.header`
   }
   display: flex;
   justify-content: center;
-
+  z-index: 10;
   position: fixed;
   ${(props) => {
     const mainColor = props.theme.light.headerColor;

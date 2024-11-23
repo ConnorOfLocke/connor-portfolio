@@ -15,18 +15,16 @@ function parseVideoLink(videoLink) {
   return videoLink;
 }
 
-const bigVid = 520;
-const smallVid = 400;
-const heightRatio = 9.0 / 16.0;
-
-export function ProjectVideo({ project }) {
+export default function ProjectVideo({ project }) {
   const themeContext = useContext(ThemeContext);
-  const [videoWidth, setVideoWidth] = useState(bigVid);
+  const [videoWidth, setVideoWidth] = useState(themeContext.largeProjectMediaSizePixels);
 
   //Resize the video
   const handleResize = useCallback(() => {
     setVideoWidth((prevWidth) => {
-      const newVidWith = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches ? bigVid : smallVid;
+      const newVidWith = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches
+        ? themeContext.largeProjectMediaSizePixels
+        : themeContext.smallProjectMediaSizePixels;
       return newVidWith !== prevWidth ? newVidWith : prevWidth;
     });
   }, [themeContext]);
@@ -52,7 +50,7 @@ export function ProjectVideo({ project }) {
           allow="encrypted-media"
           referrerPolicy="strict-origin-when-cross-origin"
           width={`${videoWidth}px`}
-          height={`${videoWidth * heightRatio}px`}
+          height={`${videoWidth * themeContext.mediaRatio}px`}
           seamless
         />
       )}
@@ -61,16 +59,18 @@ export function ProjectVideo({ project }) {
 }
 
 const YoutubeVideo = styled.iframe`
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
+  border: 0;
+  //box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
 `;
 
 const OtherVideo = styled.video`
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
+  border: 0;
+  //box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
 
-  width: ${bigVid}px;
-  height: ${bigVid * heightRatio}px;
+  width: ${(props) => props.theme.largeProjectMediaSizePixels}px;
+  height: ${(props) => props.theme.largeProjectMediaSizePixels * props.theme.mediaRatio}px;
   @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    width: ${smallVid}px;
-    height: ${smallVid * heightRatio}px;
+    width: ${(props) => props.theme.smallProjectMediaSizePixels}px;
+    height: ${(props) => props.theme.smallProjectMediaSizePixels * props.theme.mediaRatio}px;
   }
 `;

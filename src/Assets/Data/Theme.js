@@ -37,6 +37,10 @@ const THEME = {
   maxContentwidth: "80rem",
   borderRadius: "4rem",
 
+  largeProjectMediaSizePixels: "520",
+  smallProjectMediaSizePixels: "300",
+  mediaRatio: 9.0 / 16.0,
+
   black_transparent: "rbga(0,0,0,0)",
 
   light: {

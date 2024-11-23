@@ -23,9 +23,6 @@ const SubtitleText = styled.h3`
   font-size: 20px;
   color: ${(props) => props.theme.light.headerTextColor};
 
-  @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    font-size: 24px;
-  }
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     font-size: 18px;
   }
