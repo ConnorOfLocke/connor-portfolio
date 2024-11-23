@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { SubHeadertext, SubtitleText } from "../Utils/Utils";
 
 export default function WorkplacePanel({ workplace, ...props }) {
   return (
     <WorkplaceImageButtonContainer {...props}>
       <WorkplaceImage src={workplace.panelImg} alt={workplace.title} />
       <TextArea>
-        <h2>{workplace.title}</h2>
-        <h3>
+        <SubHeadertext>{workplace.title}</SubHeadertext>
+        <DateText>
           {workplace.role} - {workplace.startDate} to {workplace.endDate}
-        </h3>
+        </DateText>
       </TextArea>
     </WorkplaceImageButtonContainer>
   );
@@ -21,14 +22,16 @@ const WorkplaceImageButtonContainer = styled.button`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  min-width: 320px;
-  background-color: ${(props) => props.theme.light.tertiary_trans};
-  border-radius: ${(props) => props.theme.borderRadius};
+  background-color: ${(props) => props.theme.light.tertiary_light_trans};
   ${(props) => props.$selected && `font-style: italic;`};
+  ${(props) => props.$selected && `background-color: ${props.theme.light.tertiary_heavy_trans};`};
+
+  border-radius: ${(props) => props.theme.borderRadius};
+
+  min-width: ${(props) => props.theme.minContentwidth};
 
   transition: box-shadow 0.1s;
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
-  ${(props) => props.$selected && `box-shadow: none;`};
 
   &:hover {
     box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.light.primaryTextColor};
@@ -39,8 +42,12 @@ const WorkplaceImageButtonContainer = styled.button`
   }
 `;
 
+const DateText = styled(SubtitleText)`
+  padding: 0 1rem;
+`;
+
 const TextArea = styled.div`
-  width: auto;
+  padding: 0 2rem;
 `;
 
 const WorkplaceImage = styled.img`

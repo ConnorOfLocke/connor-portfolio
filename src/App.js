@@ -47,6 +47,10 @@ const Main = styled.div`
     padding-top: ${(props) => props.theme.smallHeaderHeight};
   }
 
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    padding-top: ${(props) => props.theme.mobileScreenHeight};
+  }
+
   margin: ${(props) => props.theme.contentMargin};
   width: 100%;
   min-width: ${(props) => props.theme.minContentwidth};

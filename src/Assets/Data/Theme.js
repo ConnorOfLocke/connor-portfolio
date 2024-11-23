@@ -17,6 +17,7 @@ const ColorAlabaster = "rgba(228, 226, 217)";
 const ColorAlabaster_a = "rgba(228, 226, 217, 0.3)";
 const ColorPlum = "rgba(235, 159, 239)";
 const ColorPlum_a = "rgba(235, 159, 239, 0.3)";
+const ColorPlum_aa = "rgba(235, 159, 239, 0.6)";
 //const ColorUltraViolet = "rgba(84, 86, 119)";
 //const ColorUltraViolet_a = "rgba(84, 86, 119, 0.3)";
 //const ColorOxfordBlue = "rgba(3, 37, 78)";
@@ -25,20 +26,22 @@ const ColorRichBlack = "rgba(1, 28, 39)";
 const ColorOffWhite = "rgba(255,251,245)";
 
 const THEME = {
+  mobileScreen: "500px",
   smallScreen: "800px",
   mediumScreen: "1080px",
 
   largeHeaderHeight: "10rem",
   mediumHeaderHeight: "8rem",
   smallHeaderHeight: "6rem",
+  mobileScreenHeight: "4rem",
 
   contentMargin: "0 8rem",
-  minContentwidth: "28rem",
+  minContentwidth: "320px",
   maxContentwidth: "80rem",
   borderRadius: "4rem",
 
   largeProjectMediaSizePixels: "520",
-  smallProjectMediaSizePixels: "300",
+  smallProjectMediaSizePixels: "240",
   mediaRatio: 9.0 / 16.0,
 
   black_transparent: "rbga(0,0,0,0)",
@@ -50,7 +53,8 @@ const THEME = {
     socialDefaultColor: ColorRichBlack,
     tertiaryLighter: ColorPlum,
     tertiary: ColorPlum,
-    tertiary_trans: ColorPlum_a,
+    tertiary_light_trans: ColorPlum_a,
+    tertiary_heavy_trans: ColorPlum_aa,
     offWhite: ColorOffWhite,
     buttonBackground: ColorAlabaster,
     buttonBorderColor: ColorAlabaster_a,

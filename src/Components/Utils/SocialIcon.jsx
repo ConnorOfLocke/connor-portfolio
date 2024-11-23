@@ -20,6 +20,11 @@ const SocialIconWrapper = styled(IconWrapper)`
     height: 35px;
   }
 
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    width: 30px;
+    height: 30px;
+  }
+
   background-color: ${(props) => props.theme.black_transparent};
   color: ${(props) => props.$socialColor};
 `;

@@ -26,6 +26,10 @@ const HeaderContainer = styled.header`
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     height: ${(props) => props.theme.smallHeaderHeight};
   }
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    height: ${(props) => props.theme.mobileScreenHeight};
+  }
+
   display: flex;
   justify-content: center;
   z-index: 10;
@@ -43,6 +47,10 @@ const HeaderContainer = styled.header`
 `;
 
 const HeaderContainerContent = styled.header`
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    padding: 0 2rem;
+  }
+
   min-width: ${(props) => props.theme.minContentwidth};
   max-width: ${(props) => props.theme.maxContentwidth};
   flex-direction: row;

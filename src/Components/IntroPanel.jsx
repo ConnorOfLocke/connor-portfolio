@@ -24,7 +24,7 @@ const IntroPanelContainer = styled.div`
   margin-top: 2rem;
   padding: 0.5rem;
   height: auto;
-  background-color: ${(props) => props.theme.light.tertiary_trans};
+  background-color: ${(props) => props.theme.light.tertiary_light_trans};
   border-radius: ${(props) => props.theme.borderRadius};
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
 
@@ -37,7 +37,7 @@ const IntroPanelContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  padding: 0 1rem;
+  padding: 0 1rem 1.25rem 1.5rem;
 `;
 
 const ProfileContainer = styled.div`
@@ -52,6 +52,9 @@ const ProfileImage = styled.img`
   }
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     height: 12rem;
+  }
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    height: 8rem;
   }
   width: fit-content;
   padding: 1rem;

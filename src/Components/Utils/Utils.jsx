@@ -17,6 +17,21 @@ const HeaderText = styled.h1`
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     font-size: 24px;
   }
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    font-size: 18px;
+  }
+`;
+
+const SubHeadertext = styled.h2`
+  font-size: 24px;
+  color: ${(props) => props.theme.light.headerTextColor};
+
+  @media (max-width: ${(props) => props.theme.smallScreen}) {
+    font-size: 20px;
+  }
+  @media (max-width: ${(props) => props.theme.mobileScreen}) {
+    font-size: 18px;
+  }
 `;
 
 const SubtitleText = styled.h3`
@@ -26,6 +41,9 @@ const SubtitleText = styled.h3`
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     font-size: 18px;
   }
+  @media (max-width: ${(props) => props.theme.smallScreen}) {
+    font-size: 13px;
+  }
 `;
 
-export { CenterTextContainer, HeaderText, SubtitleText };
+export { CenterTextContainer, HeaderText, SubHeadertext, SubtitleText };

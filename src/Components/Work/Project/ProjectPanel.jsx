@@ -3,7 +3,7 @@ import { useState } from "react";
 import IconWrapper from "../../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
-import { SubtitleText } from "../../Utils/Utils";
+import { SubHeadertext, SubtitleText } from "../../Utils/Utils";
 import ProjectImages from "./ProjectImages";
 
 function ProjectHasVideo(project) {
@@ -56,7 +56,7 @@ const ProjectContainer = styled.li`
   flex-direction: column;
 `;
 
-const ProjectTitleText = styled.h2`
+const ProjectTitleText = styled(SubHeadertext)`
   margin-left: 1rem;
 `;
 
