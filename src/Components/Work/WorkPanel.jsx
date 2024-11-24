@@ -7,8 +7,7 @@ import { CenterTextContainer, convertRemToPixels, SubtitleText } from "../Utils/
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
 export default function WorkPanel() {
-  const { widerThanMedium: isMediumScreen } = useContext(ScreenSizeContext);
-  const screenSizeContext = useContext(ScreenSizeContext);
+  const { widerThanMedium, getHeaderHeight } = useContext(ScreenSizeContext);
   const [selectedWorkplaceTitle, setSelectedWorkplaceTitle] = useState(null);
 
   useEffect(() => {
@@ -16,12 +15,12 @@ export default function WorkPanel() {
       const element = document.getElementById(selectedWorkplaceTitle);
       const scrollElement = document.getElementById("scrollContainer");
       if (element && scrollElement) {
-        const headerPixels = convertRemToPixels(screenSizeContext.getHeaderHeight());
+        const headerPixels = convertRemToPixels(getHeaderHeight());
         const y = element.getBoundingClientRect().top + scrollElement.scrollTop - headerPixels;
         scrollElement.scrollTo({ top: y, behavior: "smooth" });
       }
     }
-  }, [selectedWorkplaceTitle, screenSizeContext]);
+  }, [selectedWorkplaceTitle, getHeaderHeight]);
 
   const WorkplacesData = [...WORK.workplaces].reverse();
 
@@ -48,14 +47,14 @@ export default function WorkPanel() {
 
   //emplace the project list
   if (workplaceData) {
-    const index = Math.floor(workplaceDataIndex / (isMediumScreen ? 2 : 1)) + 2;
+    const index = Math.floor(workplaceDataIndex / (widerThanMedium ? 2 : 1)) + 2;
 
     workplaceList.push(
       <ProjectList
         key={`${workplaceData.title}_projects`}
         workplace={workplaceData}
         $gridRow={index}
-        $columns={isMediumScreen ? 2 : 1}
+        $columns={widerThanMedium ? 2 : 1}
       />
     );
   }

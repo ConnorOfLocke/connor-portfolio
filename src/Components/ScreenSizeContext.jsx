@@ -65,7 +65,7 @@ export default function ScreenSizeContextProvider({ children }) {
   }, [handleResize]);
 
   const screenSizeCTX = {
-    ...themeContext,
+    ...screenSize,
     getHeaderHeight: getHeaderHeight,
   };
 
