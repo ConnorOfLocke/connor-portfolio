@@ -4,20 +4,23 @@ import Header from "./Components/Header";
 import IntroPanel from "./Components/IntroPanel.jsx";
 import WorkPanel from "./Components/Work/WorkPanel.jsx";
 import OutroPanel from "./Components/OutroPanel.jsx";
+import ScreenSizeContextProvider from "./Components/ScreenSizeContext.jsx";
 
 function App() {
   return (
     <ThemeProvider theme={THEME}>
-      <Background>
-        <AppContainer>
-          <Header />
-          <Main>
-            <IntroPanel />
-            <WorkPanel />
-            <OutroPanel />
-          </Main>
-        </AppContainer>
-      </Background>
+      <ScreenSizeContextProvider>
+        <Background>
+          <AppContainer>
+            <Header />
+            <Main>
+              <IntroPanel />
+              <WorkPanel />
+              <OutroPanel />
+            </Main>
+          </AppContainer>
+        </Background>
+      </ScreenSizeContextProvider>
     </ThemeProvider>
   );
 }

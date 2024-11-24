@@ -1,4 +1,4 @@
-import { useState, useCallback, useContext, useEffect } from "react";
+import { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 
 function parseVideoLink(videoLink) {
@@ -15,35 +15,16 @@ function parseVideoLink(videoLink) {
   return videoLink;
 }
 
-export default function ProjectVideo({ project }) {
+export default function ProjectVideo({ project, useSmallVideo }) {
   const themeContext = useContext(ThemeContext);
-  const [videoWidth, setVideoWidth] = useState(themeContext.largeProjectMediaSizePixels);
 
-  //Resize the video
-  const handleResize = useCallback(() => {
-    setVideoWidth((prevWidth) => {
-      const newVidWith = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches
-        ? themeContext.largeProjectMediaSizePixels
-        : themeContext.smallProjectMediaSizePixels;
-      return newVidWith !== prevWidth ? newVidWith : prevWidth;
-    });
-  }, [themeContext]);
-
-  //call it on load
-  useEffect(() => {
-    handleResize();
-  }, [handleResize]);
-
-  useEffect(() => {
-    const listener = window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", listener);
-    };
-  }, [handleResize]);
+  const videoWidth = useSmallVideo
+    ? themeContext.smallProjectMediaSizePixels
+    : themeContext.largeProjectMediaSizePixels;
 
   return (
     <>
-      {project.otherVideoLink && <OtherVideo src={project.otherVideoLink} controls />}
+      {project.otherVideoLink && <OtherVideo src={project.otherVideoLink} $smallVideo={useSmallVideo} controls />}
       {project.youtubeLink && (
         <YoutubeVideo
           src={parseVideoLink(project.youtubeLink)}
@@ -67,10 +48,9 @@ const OtherVideo = styled.video`
   border: 0;
   //box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
 
-  width: ${(props) => props.theme.largeProjectMediaSizePixels}px;
-  height: ${(props) => props.theme.largeProjectMediaSizePixels * props.theme.mediaRatio}px;
-  @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    width: ${(props) => props.theme.smallProjectMediaSizePixels}px;
-    height: ${(props) => props.theme.smallProjectMediaSizePixels * props.theme.mediaRatio}px;
-  }
+  width: ${({ theme, $smallVideo }) =>
+    $smallVideo ? theme.smallProjectMediaSizePixels : theme.largeProjectMediaSizePixels}px;
+
+  height: ${({ theme, $smallVideo }) =>
+    ($smallVideo ? theme.smallProjectMediaSizePixels : theme.largeProjectMediaSizePixels) * theme.mediaRatio}px;
 `;
