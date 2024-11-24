@@ -11,7 +11,7 @@ function App() {
     <ThemeProvider theme={THEME}>
       <ScreenSizeContextProvider>
         <Background>
-          <AppContainer>
+          <AppContainer id="scrollContainer">
             <Header />
             <Main>
               <IntroPanel />

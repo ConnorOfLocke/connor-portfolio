@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+function convertRemToPixels(rem) {
+  return parseFloat(rem) * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
 const CenterTextContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -51,4 +55,4 @@ const SubtitleText = styled.h3`
   }
 `;
 
-export { CenterTextContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText };
+export { CenterTextContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };

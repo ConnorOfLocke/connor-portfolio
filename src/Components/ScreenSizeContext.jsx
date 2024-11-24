@@ -5,6 +5,7 @@ const INITIAL_SCREEN_SIZE = {
   widerThanMedium: false,
   widerThanSmall: false,
   widerThanMobile: false,
+  getHeaderHeight: () => {},
 };
 
 export const ScreenSizeContext = createContext({ ...INITIAL_SCREEN_SIZE });
@@ -37,6 +38,20 @@ export default function ScreenSizeContextProvider({ children }) {
     });
   }, [themeContext]);
 
+  const getHeaderHeight = useCallback(() => {
+    let headerHeight = themeContext.largeHeaderHeight;
+
+    if (!screenSize.widerThanMedium) {
+      headerHeight = themeContext.mediumHeaderHeight;
+    } else if (!screenSize.widerThanSmall) {
+      headerHeight = themeContext.smallHeaderHeight;
+    } else if (!screenSize.widerThanMobile) {
+      headerHeight = themeContext.mobileScreenHeight;
+    }
+
+    return headerHeight;
+  }, [themeContext, screenSize]);
+
   //call it on load
   useEffect(() => {
     handleResize();
@@ -49,5 +64,10 @@ export default function ScreenSizeContextProvider({ children }) {
     };
   }, [handleResize]);
 
-  return <ScreenSizeContext.Provider value={screenSize}>{children}</ScreenSizeContext.Provider>;
+  const screenSizeCTX = {
+    ...themeContext,
+    getHeaderHeight: getHeaderHeight,
+  };
+
+  return <ScreenSizeContext.Provider value={screenSizeCTX}>{children}</ScreenSizeContext.Provider>;
 }
