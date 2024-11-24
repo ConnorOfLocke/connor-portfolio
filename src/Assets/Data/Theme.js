@@ -26,7 +26,7 @@ const ColorRichBlack = "rgba(1, 28, 39)";
 const ColorOffWhite = "rgba(255,251,245)";
 
 const THEME = {
-  mobileScreen: "500px",
+  mobileScreen: "620px",
   smallScreen: "800px",
   mediumScreen: "1080px",
 

@@ -14,7 +14,7 @@ export default function ProjectList({ workplace, ...props }) {
 const ProjectListContainer = styled.ol`
   list-style: none;
   padding: 4rem 0;
-  margin: 2rem 0;
+  margin: 1rem 0;
   background-color: ${(props) => props.theme.light.tertiary_heavy_trans};
   border-radius: ${(props) => props.theme.borderRadius};
   grid-row: ${(props) => props.$gridRow};
