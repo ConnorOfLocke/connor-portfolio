@@ -1,16 +1,21 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { ThemeContext } from "styled-components";
+import { useState, useContext } from "react";
 import IconWrapper from "../../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
 import { SubHeadertext, SubtitleText } from "../../Utils/Utils";
 import ProjectImages from "./ProjectImages";
+import { ScreenSizeContext } from "../../ScreenSizeContext";
 
 function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
 }
 
 export default function ProjectPanel({ project }) {
+  const themeContext = useContext(ThemeContext);
+  const { widerThanSmall } = useContext(ScreenSizeContext);
+
   const [open, setIsOpen] = useState(false);
 
   function handleTitleClick() {
@@ -27,11 +32,15 @@ export default function ProjectPanel({ project }) {
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
-        <ProjectLinks project={project} />
+        <ProjectLinks
+          project={project}
+          showIcons={widerThanSmall}
+          linkIconSize={widerThanSmall ? themeContext.smallLinkIconSize : themeContext.linkIconSize}
+        />
       </ProjectHeader>
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
-          {ProjectHasVideo(project) && <ProjectVideo project={project} />}
+          {ProjectHasVideo(project) && <ProjectVideo project={project} useSmallVideo={!widerThanSmall} />}
           <ProjectImages project={project} />
         </StyledProjectVideo>
         <SubtitleText>{project.description}</SubtitleText>

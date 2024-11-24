@@ -1,41 +1,20 @@
 import styled from "styled-components";
-import { useState, useContext, useEffect, useCallback } from "react";
+import { useState, useContext } from "react";
 import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "./Project/ProjectList.jsx";
-import { ThemeContext } from "styled-components";
 import { CenterTextContainer, SubtitleText } from "../Utils/Utils.jsx";
+import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
 export default function WorkPanel() {
-  const themeContext = useContext(ThemeContext);
+  const { widerThanMedium: isMediumScreen } = useContext(ScreenSizeContext);
 
   const [selectedWorkplaceTitle, setSelectedWorkplaceTitle] = useState(null);
-  const [columns, setColumns] = useState(1);
 
   const WorkplacesData = [...WORK.workplaces].reverse();
 
   const workplaceDataIndex = WorkplacesData.findIndex((place) => place.title === selectedWorkplaceTitle);
   const workplaceData = WorkplacesData[workplaceDataIndex];
-
-  //Resize the grid columns
-  const handleResize = useCallback(() => {
-    setColumns((prevColumns) => {
-      const newColumns = window.matchMedia(`(min-width: ${themeContext.mediumScreen})`).matches ? 2 : 1;
-      return newColumns !== prevColumns ? newColumns : prevColumns;
-    });
-  }, [themeContext]);
-
-  //call it on load
-  useEffect(() => {
-    handleResize();
-  }, [handleResize]);
-
-  useEffect(() => {
-    const listener = window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", listener);
-    };
-  }, [handleResize]);
 
   function handleWorkplaceSelected(workplace) {
     setSelectedWorkplaceTitle(workplace);
@@ -56,14 +35,14 @@ export default function WorkPanel() {
 
   //emplace the project list
   if (workplaceData) {
-    const index = Math.floor(workplaceDataIndex / columns) + 2;
+    const index = Math.floor(workplaceDataIndex / (isMediumScreen ? 2 : 1)) + 2;
 
     workplaceList.push(
       <ProjectList
         key={`${workplaceData.title}_projects`}
         workplace={workplaceData}
         $gridRow={index}
-        $columns={columns}
+        $columns={isMediumScreen ? 2 : 1}
       />
     );
   }
@@ -81,7 +60,7 @@ export default function WorkPanel() {
 }
 
 const WorkPanelContainer = styled.div`
-  margin: 2rem 0;
+  margin: 1rem 0;
 `;
 
 const WorkPanelGrid = styled.div`

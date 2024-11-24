@@ -32,7 +32,10 @@ const WorkplaceImageButtonContainer = styled.button`
 
   transition: box-shadow 0.1s;
   box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
-
+  ${(props) =>
+    props.$selected &&
+    `box-shadow: none;
+  `};
   &:hover {
     box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.light.primaryTextColor};
     ${(props) =>

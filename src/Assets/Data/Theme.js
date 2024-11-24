@@ -39,6 +39,8 @@ const THEME = {
   minContentwidth: "320px",
   maxContentwidth: "80rem",
   borderRadius: "4rem",
+  linkIconSize: "2rem",
+  smallLinkIconSize: "1.5rem",
 
   largeProjectMediaSizePixels: "520",
   smallProjectMediaSizePixels: "240",
