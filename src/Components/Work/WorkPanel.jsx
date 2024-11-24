@@ -1,15 +1,27 @@
 import styled from "styled-components";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "./Project/ProjectList.jsx";
-import { CenterTextContainer, SubtitleText } from "../Utils/Utils.jsx";
+import { CenterTextContainer, convertRemToPixels, SubtitleText } from "../Utils/Utils.jsx";
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
 export default function WorkPanel() {
   const { widerThanMedium: isMediumScreen } = useContext(ScreenSizeContext);
-
+  const screenSizeContext = useContext(ScreenSizeContext);
   const [selectedWorkplaceTitle, setSelectedWorkplaceTitle] = useState(null);
+
+  useEffect(() => {
+    if (selectedWorkplaceTitle) {
+      const element = document.getElementById(selectedWorkplaceTitle);
+      const scrollElement = document.getElementById("scrollContainer");
+      if (element && scrollElement) {
+        const headerPixels = convertRemToPixels(screenSizeContext.getHeaderHeight());
+        const y = element.getBoundingClientRect().top + scrollElement.scrollTop - headerPixels;
+        scrollElement.scrollTo({ top: y, behavior: "smooth" });
+      }
+    }
+  }, [selectedWorkplaceTitle, screenSizeContext]);
 
   const WorkplacesData = [...WORK.workplaces].reverse();
 
@@ -24,6 +36,7 @@ export default function WorkPanel() {
     return (
       <WorkplacePanel
         key={work.title}
+        id={work.title}
         workplace={work}
         $selected={work.title === selectedWorkplaceTitle}
         onClick={() => {
