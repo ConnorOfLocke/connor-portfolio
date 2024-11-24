@@ -29,13 +29,14 @@ export default function ProjectPanel({ project }) {
           <TitleContainer>
             {!open && <IconWrapper iconID={"arrow-right"} size={"1rem"} />}
             {open && <IconWrapper iconID={"arrow-down"} size={"1rem"} />}
+            {project.favorite && <FavoriteStar iconID={"favorite"} size={"1.5rem"} />}
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
         <ProjectLinks project={project} iconSize={themeContext.iconSize}>
           {widerThanSmall && (
             <>
-              <LargeScreenIcons project={project} iconSize={themeContext.iconSize} />
+              <ProjectIcons project={project} iconSize={themeContext.iconSize} />
               <VerticalSeperator />
             </>
           )}
@@ -53,7 +54,10 @@ export default function ProjectPanel({ project }) {
   );
 }
 
-const LargeScreenIcons = styled(ProjectIcons)``;
+const FavoriteStar = styled(IconWrapper)`
+  margin-left: 0.5rem;
+  color: ${(props) => props.theme.light.favColor};
+`;
 
 const SmallScreenIcons = styled(ProjectIcons)`
   border-radius: ${(props) => ` 0 0 ${props.theme.borderRadius} ${props.theme.borderRadius}`};

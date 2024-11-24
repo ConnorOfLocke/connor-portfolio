@@ -57,6 +57,7 @@ const THEME = {
     tertiary_light_trans: ColorPlum_a,
     tertiary_heavy_trans: ColorPlum_aa,
     offWhite: ColorOffWhite,
+    favColor: "gold",
     buttonBackground: ColorAlabaster,
     buttonBorderColor: ColorAlabaster_a,
     buttonBackgroundSelected: "antiquewhite",

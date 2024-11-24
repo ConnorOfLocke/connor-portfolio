@@ -9,7 +9,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
-import { FaBluesky } from "react-icons/fa6";
+import { FaBluesky, FaStar } from "react-icons/fa6";
 import { SlLink, SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { SiGamemaker, SiWebgl } from "react-icons/si";
 import { IoLogoAndroid } from "react-icons/io";
@@ -36,6 +36,7 @@ const iconPairs = [
   { id: "email", icon: MdEmail },
   { id: "linkedIn", icon: FaLinkedin },
   { id: "bluesky", icon: FaBluesky },
+  { id: "favorite", icon: FaStar },
 ];
 
 export default function IconWrapper({ iconID, ...props }) {
