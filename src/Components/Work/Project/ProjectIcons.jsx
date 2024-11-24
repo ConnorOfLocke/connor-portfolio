@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import IconWrapper from "../../Utils/IconWrapper";
+import { VerticalSeperator } from "../../Utils/Utils";
 
-export function ProjectIcons({ project }) {
+export default function ProjectIcons({ project, iconSize, ...props }) {
   const isUnity = project.engine === "Unity";
   const isGameMaker = project.engine === "GameMaker";
   const isReact = project.engine === "React";
@@ -14,37 +15,33 @@ export function ProjectIcons({ project }) {
   const isWebGl = project.target.findIndex((target) => target === "WebGL") !== -1;
   const isWeb = project.target.findIndex((target) => target === "Web") !== -1;
 
-  const midSize = "1.5rem";
-
   return (
-    <>
-      <>
-        {isUnity && <IconWrapper iconID={"unity"} size={midSize} />}
-        {isGameMaker && <IconWrapper iconID={"gamemaker"} size={midSize} />}
-        {isReact && <IconWrapper iconID={"react"} size={midSize} />}
-        <VerticalSeperator />
-        <IconRow>
-          {isIOS && <IconWrapper iconID={"ios"} size={midSize} />}
-          {isAndroid && <IconWrapper iconID={"android"} size={midSize} />}
-          {isPlaystation && <IconWrapper iconID={"xbox"} size={midSize} />}
-          {isXbox && <IconWrapper iconID={"playstation"} size={midSize} />}
-          {isPC && <IconWrapper iconID={"pc"} size={midSize} />}
-          {isWebGl && <IconWrapper iconID={"webgl"} size={midSize} />}
-          {isWeb && <IconWrapper iconID={"web"} size={midSize} />}
-          {project.target.length <= 0 && <IconWrapper iconID={"mystery"} size={midSize} />}
-        </IconRow>
-        <VerticalSeperator />
-      </>
-    </>
+    <ProjectIconContainer {...props}>
+      {isUnity && <IconWrapper iconID={"unity"} size={iconSize} />}
+      {isGameMaker && <IconWrapper iconID={"gamemaker"} size={iconSize} />}
+      {isReact && <IconWrapper iconID={"react"} size={iconSize} />}
+      <VerticalSeperator />
+      <IconRow>
+        {isIOS && <IconWrapper iconID={"ios"} size={iconSize} />}
+        {isAndroid && <IconWrapper iconID={"android"} size={iconSize} />}
+        {isPlaystation && <IconWrapper iconID={"xbox"} size={iconSize} />}
+        {isXbox && <IconWrapper iconID={"playstation"} size={iconSize} />}
+        {isPC && <IconWrapper iconID={"pc"} size={iconSize} />}
+        {isWebGl && <IconWrapper iconID={"webgl"} size={iconSize} />}
+        {isWeb && <IconWrapper iconID={"web"} size={iconSize} />}
+        {project.target.length <= 0 && <IconWrapper iconID={"mystery"} size={iconSize} />}
+      </IconRow>
+    </ProjectIconContainer>
   );
 }
+
+const ProjectIconContainer = styled.div`
+  display: flex;
+  min-width: auto;
+  min-height: 3rem;
+`;
 
 const IconRow = styled.div`
   display: flex;
   gap: 4px;
-`;
-
-const VerticalSeperator = styled.div`
-  border: 1px solid grey;
-  margin: 16px 1rem;
 `;

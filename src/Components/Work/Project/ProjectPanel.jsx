@@ -4,9 +4,10 @@ import { useState, useContext } from "react";
 import IconWrapper from "../../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
-import { SubHeadertext, SubtitleText } from "../../Utils/Utils";
+import { SubHeadertext, SubtitleText, VerticalSeperator } from "../../Utils/Utils";
 import ProjectImages from "./ProjectImages";
 import { ScreenSizeContext } from "../../ScreenSizeContext";
+import ProjectIcons from "./ProjectIcons";
 
 function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
@@ -21,7 +22,6 @@ export default function ProjectPanel({ project }) {
   function handleTitleClick() {
     setIsOpen((prevOpen) => !prevOpen);
   }
-
   return (
     <ProjectContainer>
       <ProjectHeader>
@@ -32,12 +32,16 @@ export default function ProjectPanel({ project }) {
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
-        <ProjectLinks
-          project={project}
-          showIcons={widerThanSmall}
-          linkIconSize={widerThanSmall ? themeContext.smallLinkIconSize : themeContext.linkIconSize}
-        />
+        <ProjectLinks project={project} iconSize={themeContext.iconSize}>
+          {widerThanSmall && (
+            <>
+              <LargeScreenIcons project={project} iconSize={themeContext.iconSize} />
+              <VerticalSeperator />
+            </>
+          )}
+        </ProjectLinks>
       </ProjectHeader>
+      {!widerThanSmall && open && <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />}
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
           {ProjectHasVideo(project) && <ProjectVideo project={project} useSmallVideo={!widerThanSmall} />}
@@ -48,6 +52,15 @@ export default function ProjectPanel({ project }) {
     </ProjectContainer>
   );
 }
+
+const LargeScreenIcons = styled(ProjectIcons)``;
+
+const SmallScreenIcons = styled(ProjectIcons)`
+  border-radius: ${(props) => ` 0 0 ${props.theme.borderRadius} ${props.theme.borderRadius}`};
+  padding: 0 2rem;
+  background-color: ${(props) => props.theme.light.offWhite};
+  justify-content: center;
+`;
 
 const StyledProjectVideo = styled.div`
   float: inline-start;

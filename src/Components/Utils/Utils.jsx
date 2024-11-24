@@ -7,6 +7,11 @@ const CenterTextContainer = styled.div`
   flex-direction: column;
 `;
 
+const VerticalSeperator = styled.div`
+  border: 1px solid grey;
+  margin: 16px 1rem;
+`;
+
 const HeaderText = styled.h1`
   font-size: 48px;
   color: ${(props) => props.theme.light.headerTextColor};
@@ -46,4 +51,4 @@ const SubtitleText = styled.h3`
   }
 `;
 
-export { CenterTextContainer, HeaderText, SubHeadertext, SubtitleText };
+export { CenterTextContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText };

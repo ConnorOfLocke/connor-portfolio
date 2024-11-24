@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import IconWrapper from "../../Utils/IconWrapper";
 import LinkButton from "../../Utils/LinkButton";
-import { ProjectIcons } from "./ProjectIcons";
 
-export default function ProjectLinks({ project, showIcons, linkIconSize }) {
+export default function ProjectLinks({ project, iconSize, children }) {
   return (
     <LinkContainer>
-      {showIcons && <ProjectIcons project={project} />}
+      {children}
       <StyledLinkButton urlLink={project.urlLink} target="_blank" rel="noopener noopener">
-        <IconWrapper iconID={"link"} size={linkIconSize} />
+        <IconWrapper iconID={"link"} size={iconSize} />
       </StyledLinkButton>
     </LinkContainer>
   );
@@ -23,10 +22,6 @@ const StyledLinkButton = styled(LinkButton)`
   & :hover {
     color: ${(props) => props.theme.light.socialFgColor};
   }
-
-  & :visited {
-    color: green;
-  }
 `;
 
 const LinkContainer = styled.div`
@@ -34,5 +29,4 @@ const LinkContainer = styled.div`
   min-width: auto;
   padding: 0 1rem;
   background-color: ${(props) => props.theme.light.offWhite};
-  border-top: 1px solid ${(props) => props.theme.light.buttonBorderColor};
 `;
