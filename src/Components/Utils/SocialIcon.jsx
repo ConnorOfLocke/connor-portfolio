@@ -25,8 +25,8 @@ export default function SocialIcon({ socialId, altIcon }) {
       altIcon={altIcon}
       backgroundColor={altIcon ? socialColor : "transparent"}
       foregroundColor={altIcon ? "white" : socialColor}
-      altIconSize={iconSize}
-      altInnerIconSize={innerIconSize}
+      iconSize={iconSize}
+      innerIconSize={innerIconSize}
     />
   );
 }

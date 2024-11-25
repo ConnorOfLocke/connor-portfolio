@@ -7,7 +7,7 @@ export default function ProjectLinks({ project, iconSize, children }) {
     <LinkContainer>
       {children}
       <StyledLinkButton urlLink={project.urlLink} target="_blank" rel="noopener noopener">
-        <IconWrapper iconID={"link"} size={iconSize} />
+        <IconWrapper iconID={"link"} iconSize={iconSize} />
       </StyledLinkButton>
     </LinkContainer>
   );

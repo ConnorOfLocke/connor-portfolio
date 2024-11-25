@@ -27,9 +27,9 @@ export default function ProjectPanel({ project }) {
       <ProjectHeader>
         <ProjectTitle onClick={handleTitleClick}>
           <TitleContainer>
-            {!open && <IconWrapper iconID={"arrow-right"} size={"1rem"} />}
-            {open && <IconWrapper iconID={"arrow-down"} size={"1rem"} />}
-            {project.favorite && <FavoriteStar iconID={"favorite"} size={"1.5rem"} />}
+            {!open && <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />}
+            {open && <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />}
+            {project.favorite && <FavoriteStar iconID={"favorite"} iconSize={"1.5rem"} />}
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
