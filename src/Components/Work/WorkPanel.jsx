@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "./Project/ProjectList.jsx";
-import { CenterTextContainer, convertRemToPixels, SubtitleText } from "../Utils/Utils.jsx";
+import { CenteringContainer, convertRemToPixels, SubtitleText } from "../Utils/Utils.jsx";
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
 export default function WorkPanel() {
@@ -61,11 +61,11 @@ export default function WorkPanel() {
 
   return (
     <WorkPanelContainer>
-      <CenterTextContainer>
+      <CenteringContainer>
         <SubtitleText>
           Take a squizz! These are all the places I've worked at and the games I’ve had a part in making.
         </SubtitleText>
-      </CenterTextContainer>
+      </CenteringContainer>
       <WorkPanelGrid>{workplaceList}</WorkPanelGrid>
     </WorkPanelContainer>
   );

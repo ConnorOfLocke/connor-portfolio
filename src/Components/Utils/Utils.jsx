@@ -4,7 +4,7 @@ function convertRemToPixels(rem) {
   return parseFloat(rem) * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
 
-const CenterTextContainer = styled.div`
+const CenteringContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,4 +55,4 @@ const SubtitleText = styled.h3`
   }
 `;
 
-export { CenterTextContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };
+export { CenteringContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };

@@ -7,15 +7,11 @@ export default function OutroPanel() {
     <OutroPanelContainer>
       <div>
         <SubtitleTextCentered>Come say hi if you wanna</SubtitleTextCentered>
-        <SocialLinksCentered />
+        <SocialLinks />
       </div>
     </OutroPanelContainer>
   );
 }
-
-const SocialLinksCentered = styled(SocialLinks)`
-  justify-content: center;
-`;
 
 const SubtitleTextCentered = styled(SubtitleText)`
   text-align: center;

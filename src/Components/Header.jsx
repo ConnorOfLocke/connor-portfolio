@@ -1,19 +1,23 @@
 import styled from "styled-components";
 import SocialLinks from "./SocialLinks.jsx";
-import { CenterTextContainer, HeaderText } from "./Utils/Utils.jsx";
+import { CenteringContainer, HeaderText } from "./Utils/Utils.jsx";
 
 export default function Header() {
   return (
     <HeaderContainer>
       <HeaderContainerContent>
-        <CenterTextContainer>
+        <CenteringContainer>
           <HeaderText>Connor Locke-Warburton</HeaderText>
-        </CenterTextContainer>
-        <SocialLinks />
+        </CenteringContainer>
+        <SocialLinksStyled altIcon={true} />
       </HeaderContainerContent>
     </HeaderContainer>
   );
 }
+
+const SocialLinksStyled = styled(SocialLinks)`
+  padding-left: 2rem;
+`;
 
 const HeaderContainer = styled.header`
   width: 100%;

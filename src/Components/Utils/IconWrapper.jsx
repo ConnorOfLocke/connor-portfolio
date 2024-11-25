@@ -16,6 +16,7 @@ import { IoLogoAndroid } from "react-icons/io";
 import { FaComputer } from "react-icons/fa6";
 import { TbDeviceDesktopQuestion } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
+import { CenteringContainer } from "./Utils";
 
 const iconPairs = [
   { id: "unity", icon: FaUnity },
@@ -39,12 +40,48 @@ const iconPairs = [
   { id: "favorite", icon: FaStar },
 ];
 
-export default function IconWrapper({ iconID, ...props }) {
+export default function IconWrapper({
+  iconID,
+  altIcon,
+  altIconSize,
+  altInnerIconSize,
+  backgroundColor,
+  foregroundColor,
+  ...props
+}) {
   const iconindex = iconPairs.findIndex((icon) => icon.id === iconID);
   const iconPair = iconPairs[iconindex];
 
-  return <IconContainer>{iconPair && <iconPair.icon {...props} />}</IconContainer>;
+  return (
+    <IconContainer>
+      {iconPair && (
+        <IconBackground
+          $backgroundColor={backgroundColor}
+          $foregroundColor={foregroundColor}
+          $iconSize={altIconSize}
+          {...props}
+        >
+          <CenteringContainer>
+            <iconPair.icon size={altIcon ? altInnerIconSize : altIconSize} />
+          </CenteringContainer>
+        </IconBackground>
+      )}
+    </IconContainer>
+  );
 }
+
+const IconBackground = styled.div`
+  border-radius: 50%;
+  background-color: ${(props) => props.$backgroundColor};
+  color: ${(props) => props.$foregroundColor};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ${(props) => {
+    if (props.$iconSize) return ` width: ${props.$iconSize}; height: ${props.$iconSize}`;
+  }}
+`;
 
 const IconContainer = styled.div`
   margin: auto 0;
