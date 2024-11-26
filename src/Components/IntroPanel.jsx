@@ -56,7 +56,6 @@ const ProfileImage = styled.img`
   @media (max-width: ${(props) => props.theme.mobileScreen}) {
     height: 8rem;
   }
-  width: fit-content;
   padding: 1rem;
   border-radius: 4rem;
 `;

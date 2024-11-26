@@ -3,7 +3,7 @@ import { SubHeadertext, SubtitleText } from "../Utils/Utils";
 
 export default function WorkplacePanel({ workplace, ...props }) {
   return (
-    <WorkplaceImageButtonContainer {...props}>
+    <WorkplaceImageButtonContainer {...props}>      
       <WorkplaceImage src={workplace.panelImg} alt={workplace.title} />
       <TextArea>
         <SubHeadertext>{workplace.title}</SubHeadertext>
@@ -22,6 +22,7 @@ const WorkplaceImageButtonContainer = styled.button`
   display: flex;
   flex-direction: column;
   align-items: stretch;
+
   background-color: ${(props) => props.theme.light.tertiary_light_trans};
   ${(props) => props.$selected && `font-style: italic;`};
   ${(props) => props.$selected && `background-color: ${props.theme.light.tertiary_heavy_trans};`};
@@ -55,4 +56,7 @@ const TextArea = styled.div`
 
 const WorkplaceImage = styled.img`
   border-radius: ${(props) => props.theme.borderRadius};
+  align-self: center;
+  width: 100%;
+  height: 100%;
 `;
