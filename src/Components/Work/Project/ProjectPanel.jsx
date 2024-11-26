@@ -15,13 +15,21 @@ function ProjectHasVideo(project) {
 
 export default function ProjectPanel({ project }) {
   const themeContext = useContext(ThemeContext);
-  const { widerThanSmall } = useContext(ScreenSizeContext);
+  const { widerThanMedium, widerThanSmall } = useContext(ScreenSizeContext);
 
   const [open, setIsOpen] = useState(false);
 
   function handleTitleClick() {
     setIsOpen((prevOpen) => !prevOpen);
   }
+
+  let videoSize = "lg";
+  if (!widerThanSmall) {
+    videoSize = "sm";
+  } else if (!widerThanMedium) {
+    videoSize = "md";
+  }
+
   return (
     <ProjectContainer>
       <ProjectHeader>
@@ -34,7 +42,7 @@ export default function ProjectPanel({ project }) {
           </TitleContainer>
         </ProjectTitle>
         <ProjectLinks project={project} iconSize={themeContext.iconSize}>
-          {widerThanSmall && (
+          {widerThanMedium && (
             <>
               <ProjectIcons project={project} iconSize={themeContext.iconSize} />
               <VerticalSeperator />
@@ -42,10 +50,10 @@ export default function ProjectPanel({ project }) {
           )}
         </ProjectLinks>
       </ProjectHeader>
-      {!widerThanSmall && open && <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />}
+      {!widerThanMedium && open && <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />}
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
-          {ProjectHasVideo(project) && <ProjectVideo project={project} useSmallVideo={!widerThanSmall} />}
+          {ProjectHasVideo(project) && <ProjectVideo project={project} videoSize={videoSize} />}
           <ProjectImages project={project} />
         </StyledProjectVideo>
         <SubtitleText>{project.description}</SubtitleText>
@@ -69,12 +77,6 @@ const SmallScreenIcons = styled(ProjectIcons)`
 const StyledProjectVideo = styled.div`
   float: inline-start;
   margin: 1rem 1rem 0 0;
-  @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    float: none;
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0 0 0;
-  }
 `;
 
 const ProjectContainer = styled.li`

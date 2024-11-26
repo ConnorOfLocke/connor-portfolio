@@ -15,16 +15,20 @@ function parseVideoLink(videoLink) {
   return videoLink;
 }
 
-export default function ProjectVideo({ project, useSmallVideo }) {
+export default function ProjectVideo({ project, videoSize }) {
   const themeContext = useContext(ThemeContext);
 
-  const videoWidth = useSmallVideo
-    ? themeContext.smallProjectMediaSizePixels
-    : themeContext.largeProjectMediaSizePixels;
+  const VideoSizes = {
+    sm: themeContext.smallProjectMediaSizePixels,
+    md: themeContext.mediumProjectMediaSizePixels,
+    lg: themeContext.largeProjectMediaSizePixels,
+  };
+
+  const videoWidth = videoSize && VideoSizes[videoSize] ? VideoSizes[videoSize] : VideoSizes.sm;
 
   return (
     <>
-      {project.otherVideoLink && <OtherVideo src={project.otherVideoLink} $smallVideo={useSmallVideo} controls />}
+      {project.otherVideoLink && <OtherVideo src={project.otherVideoLink} $videoSize={videoWidth} controls />}
       {project.youtubeLink && (
         <YoutubeVideo
           src={parseVideoLink(project.youtubeLink)}
@@ -41,16 +45,10 @@ export default function ProjectVideo({ project, useSmallVideo }) {
 
 const YoutubeVideo = styled.iframe`
   border: 0;
-  //box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
 `;
 
 const OtherVideo = styled.video`
   border: 0;
-  //box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.headerTextColor};
-
-  width: ${({ theme, $smallVideo }) =>
-    $smallVideo ? theme.smallProjectMediaSizePixels : theme.largeProjectMediaSizePixels}px;
-
-  height: ${({ theme, $smallVideo }) =>
-    ($smallVideo ? theme.smallProjectMediaSizePixels : theme.largeProjectMediaSizePixels) * theme.mediaRatio}px;
+  width: ${({ $videoSize }) => $videoSize}px;
+  height: ${({ theme, $videoSize }) => $videoSize * theme.mediaRatio}px;
 `;

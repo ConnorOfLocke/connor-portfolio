@@ -42,6 +42,7 @@ const THEME = {
   iconSize: "1.5rem",
 
   largeProjectMediaSizePixels: "520",
+  mediumProjectMediaSizePixels: "360",
   smallProjectMediaSizePixels: "240",
   mediaRatio: 9.0 / 16.0,
 
