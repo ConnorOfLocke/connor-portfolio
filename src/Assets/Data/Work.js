@@ -94,7 +94,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
-          description: "Perspective changing Arcade game. QA’d and programmed reward systems and analytics.",
+          description: "Perspective changing Arcade game. QA’d and implemented reward systems and analytics.",
         },
       ],
       franchises: [

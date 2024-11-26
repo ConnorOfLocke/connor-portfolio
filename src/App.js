@@ -28,14 +28,14 @@ function App() {
 const Background = styled.div`
   height: 100vh;
   width: 100%;
-  background-image: url(${(props) => props.theme.light.backgroundImage});
+  background-image: url(${(props) => props.theme.colors.backgroundImage});
 `;
 
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
   overflow-y: scroll;
-  background-color: ${(props) => props.theme.light.primary};
+  background-color: ${(props) => props.theme.colors.primary};
   display: flex;
   justify-content: center;
 `;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import IconWrapper from "../../Utils/IconWrapper";
-import LinkButton from "../../Utils/LinkButton";
+import IconWrapper from "../Utils/IconWrapper";
+import LinkButton from "../Utils/LinkButton";
 
 export default function ProjectLinks({ project, iconSize, children }) {
   return (
@@ -17,10 +17,10 @@ const StyledLinkButton = styled(LinkButton)`
   display: flex;
   justify-content: center;
 
-  color: ${(props) => props.theme.light.ColorRichBlack};
+  color: ${(props) => props.theme.colors.ColorRichBlack};
 
   & :hover {
-    color: ${(props) => props.theme.light.socialFgColor};
+    color: ${(props) => props.theme.colors.socialFgColor};
   }
 `;
 
@@ -28,5 +28,5 @@ const LinkContainer = styled.div`
   display: flex;
   min-width: auto;
   padding: 0 1rem;
-  background-color: ${(props) => props.theme.light.offWhite};
+  background-color: ${(props) => props.theme.colors.projectTitlePanel};
 `;

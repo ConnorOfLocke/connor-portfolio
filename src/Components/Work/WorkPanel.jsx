@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState, useContext, useEffect } from "react";
 import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
-import ProjectList from "./Project/ProjectList.jsx";
+import ProjectList from "../Project/ProjectList.jsx";
 import { CenteringContainer, convertRemToPixels, SubtitleText } from "../Utils/Utils.jsx";
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
@@ -62,14 +62,18 @@ export default function WorkPanel() {
   return (
     <WorkPanelContainer>
       <CenteringContainer>
-        <SubtitleText>
+        <StyledSubtitleText>
           Take a squizz! These are all the places I've worked at and the games I’ve had a part in making.
-        </SubtitleText>
+        </StyledSubtitleText>
       </CenteringContainer>
       <WorkPanelGrid>{workplaceList}</WorkPanelGrid>
     </WorkPanelContainer>
   );
 }
+
+const StyledSubtitleText = styled(SubtitleText)`
+  color: ${(props) => props.theme.colors.headerText};
+`;
 
 const WorkPanelContainer = styled.div`
   margin: 1rem 0;

@@ -9,7 +9,7 @@ export default function IntroPanel() {
         <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
       </ProfileContainer>
       <TextContainer>
-        <HeaderText>Games Developer with +8 Years of experience.</HeaderText>
+        <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
           I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
@@ -24,9 +24,9 @@ const IntroPanelContainer = styled.div`
   margin-top: 2rem;
   padding: 0.5rem;
   height: auto;
-  background-color: ${(props) => props.theme.light.tertiary_light_trans};
+  background-color: ${(props) => props.theme.colors.introPanel};
   border-radius: ${(props) => props.theme.borderRadius};
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
+  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.colors.primaryTextColor};
 
   @media (min-width: ${(props) => props.theme.mediumScreen}) {
     float: none;
@@ -34,6 +34,10 @@ const IntroPanelContainer = styled.div`
     justify-content: center;
     margin: 1rem 0 0 0;
   }
+`;
+
+const StyledHeaderText = styled(HeaderText)`
+  color: ${(props) => props.theme.colors.introHeader};
 `;
 
 const TextContainer = styled.div`

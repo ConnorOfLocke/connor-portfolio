@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { ThemeContext } from "styled-components";
 import { useState, useContext } from "react";
-import IconWrapper from "../../Utils/IconWrapper";
+import IconWrapper from "../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
-import { SubHeadertext, SubtitleText, VerticalSeperator } from "../../Utils/Utils";
+import { SubHeadertext, SubtitleText, VerticalSeperator } from "../Utils/Utils";
 import ProjectImages from "./ProjectImages";
-import { ScreenSizeContext } from "../../ScreenSizeContext";
+import { ScreenSizeContext } from "../ScreenSizeContext";
 import ProjectIcons from "./ProjectIcons";
 
 function ProjectHasVideo(project) {
@@ -64,13 +64,12 @@ export default function ProjectPanel({ project }) {
 
 const FavoriteStar = styled(IconWrapper)`
   margin-left: 0.5rem;
-  color: ${(props) => props.theme.light.favColor};
+  color: ${(props) => props.theme.colors.favColor};
 `;
 
 const SmallScreenIcons = styled(ProjectIcons)`
   border-radius: ${(props) => ` 0 0 ${props.theme.borderRadius} ${props.theme.borderRadius}`};
   padding: 0 2rem;
-  background-color: ${(props) => props.theme.light.offWhite};
   justify-content: center;
 `;
 
@@ -86,6 +85,7 @@ const ProjectContainer = styled.li`
 
 const ProjectTitleText = styled(SubHeadertext)`
   margin-left: 1rem;
+  color: ${(props) => props.theme.colors.projectTitleColor};
 `;
 
 const TitleContainer = styled.div`
@@ -99,11 +99,11 @@ const ProjectHeader = styled.div`
 `;
 
 const ProjectTitle = styled.button`
-  background-color: ${(props) => props.theme.light.offWhite};
+  background-color: ${(props) => props.theme.colors.projectTitlePanel};
   padding: 0;
   margin: 0;
   border: 0;
-  border-top: 1px solid ${(props) => props.theme.light.buttonBorderColor};
+  border-top: 1px solid ${(props) => props.theme.colors.greyAccent};
   padding-left: 1rem;
   width: 100%;
 
