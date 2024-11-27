@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import IconWrapper from "../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
-import { SubHeadertext, SubtitleText, VerticalSeperator } from "../Utils/Utils";
+import { SubHeadertext, SubtitleText, Seperator } from "../Utils/Utils";
 import ProjectImages from "./ProjectImages";
 import { ScreenSizeContext } from "../ScreenSizeContext";
 import ProjectIcons from "./ProjectIcons";
@@ -13,7 +13,7 @@ function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
 }
 
-export default function ProjectPanel({ project }) {
+export default function ProjectPanel({ project, isFirst, isLast }) {
   const themeContext = useContext(ThemeContext);
   const { widerThanMedium, widerThanSmall } = useContext(ScreenSizeContext);
 
@@ -31,26 +31,18 @@ export default function ProjectPanel({ project }) {
   }
 
   return (
-    <ProjectContainer>
+    <ProjectContainer $isLast={isLast}>
       <ProjectHeader>
-        <ProjectTitle onClick={handleTitleClick}>
+        <ProjectTitle onClick={handleTitleClick} $isFirst={isFirst}>
           <TitleContainer>
             {!open && <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />}
             {open && <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />}
-            {project.favorite && <FavoriteStar iconID={"favorite"} iconSize={"1.5rem"} />}
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
-        <ProjectLinks project={project} iconSize={themeContext.iconSize}>
-          {widerThanMedium && (
-            <>
-              <ProjectIcons project={project} iconSize={themeContext.iconSize} />
-              <VerticalSeperator />
-            </>
-          )}
-        </ProjectLinks>
+        <ProjectLinks project={project} iconSize={themeContext.iconSize}></ProjectLinks>
       </ProjectHeader>
-      {!widerThanMedium && open && <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />}
+      <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
           {ProjectHasVideo(project) && <ProjectVideo project={project} videoSize={videoSize} />}
@@ -62,30 +54,14 @@ export default function ProjectPanel({ project }) {
   );
 }
 
-const FavoriteStar = styled(IconWrapper)`
-  margin-left: 0.5rem;
-  color: ${(props) => props.theme.colors.favColor};
-`;
-
-const SmallScreenIcons = styled(ProjectIcons)`
-  border-radius: ${(props) => ` 0 0 ${props.theme.borderRadius} ${props.theme.borderRadius}`};
-  padding: 0 2rem;
-  justify-content: center;
-`;
-
-const StyledProjectVideo = styled.div`
-  float: inline-start;
-  margin: 1rem 1rem 0 0;
-`;
-
 const ProjectContainer = styled.li`
   display: flex;
   flex-direction: column;
+  margin-bottom: ${(props) => (props.$isLast ? props.theme.innerBorderRadius : "1rem")};
 `;
 
 const ProjectTitleText = styled(SubHeadertext)`
   margin-left: 1rem;
-  color: ${(props) => props.theme.colors.projectTitleColor};
 `;
 
 const TitleContainer = styled.div`
@@ -100,12 +76,15 @@ const ProjectHeader = styled.div`
 
 const ProjectTitle = styled.button`
   background-color: ${(props) => props.theme.colors.projectTitlePanel};
+
+  border-radius: ${(props) => (props.$isFirst ? `${props.theme.innerBorderRadius}  0 0 0` : "0")};
   padding: 0;
   margin: 0;
   border: 0;
-  border-top: 1px solid ${(props) => props.theme.colors.greyAccent};
   padding-left: 1rem;
   width: 100%;
+
+  min-height: ${(props) => props.theme.colors.innerBorderRadius};
 
   & :hover {
     font-style: italic;
@@ -119,4 +98,19 @@ const ProjectInfo = styled.div`
   padding: ${(props) => (props.$isOpen ? "0.5rem 2rem 2rem 2rem" : "0")};
   height: ${(props) => (props.$isOpen ? "100%" : "0")};
   visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
+`;
+
+const SmallScreenIcons = styled(ProjectIcons)`
+  border-left: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
+  border-bottom: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
+  border-radius: ${(props) => ` 0 0 0 ${props.theme.borderRadius}`};
+  margin-left: 60%;
+  padding: 0 2rem;
+  justify-content: center;
+  //background-color: ${(props) => props.theme.colors.projectTitlePanel};
+`;
+
+const StyledProjectVideo = styled.div`
+  float: inline-start;
+  margin: 1rem 1rem 0 0;
 `;

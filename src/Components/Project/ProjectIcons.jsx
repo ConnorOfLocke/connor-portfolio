@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import IconWrapper from "../Utils/IconWrapper";
-import { VerticalSeperator } from "../Utils/Utils";
+import { Seperator } from "../Utils/Utils";
 
 export default function ProjectIcons({ project, iconSize, ...props }) {
   const isUnity = project.engine === "Unity";
@@ -20,7 +20,7 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
       {isUnity && <IconWrapper iconID={"unity"} iconSize={iconSize} />}
       {isGameMaker && <IconWrapper iconID={"gamemaker"} iconSize={iconSize} />}
       {isReact && <IconWrapper iconID={"react"} iconSize={iconSize} />}
-      <VerticalSeperator />
+      <Seperator />
       <IconRow>
         {isIOS && <IconWrapper iconID={"ios"} iconSize={iconSize} />}
         {isAndroid && <IconWrapper iconID={"android"} iconSize={iconSize} />}

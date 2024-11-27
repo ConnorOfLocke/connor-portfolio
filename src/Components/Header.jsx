@@ -20,7 +20,7 @@ const SocialLinksStyled = styled(SocialLinks)`
 `;
 
 const HeaderContainer = styled.header`
-  width: 100%;
+  width: 101%;
 
   height: ${({ theme }) => theme.largeHeaderHeight};
 
@@ -39,18 +39,21 @@ const HeaderContainer = styled.header`
   z-index: 10;
   position: fixed;
 
+  border-bottom: 1rem solid ${(props) => props.theme.colors.header};
+  background: ${(props) => props.theme.colors.header};
+  /*
   color: ${(props) => props.theme.headerText}
     ${(props) => {
-      const mainColor = props.theme.colors.header;
-      const mainColor2 = props.theme.colors.header2;
-      const transColor = props.theme.colors.header_trans;
-      return `        
+    const mainColor = props.theme.colors.header;
+    const mainColor2 = props.theme.colors.header2;
+    const transColor = props.theme.colors.header_trans;
+    return `        
         background: ${mainColor};
         background: -moz-linear-gradient(180deg, ${mainColor} 0%, ${mainColor2} 90%, ${transColor} 100%);
         background: -webkit-linear-gradient(180deg, ${mainColor} 0%, ${mainColor2} 90%, ${transColor} 100%);
         background: linear-gradient(180deg, ${mainColor} 0%, ${mainColor2} 90%, ${transColor} 100%);        
       `;
-    }};
+  }};*/
 `;
 
 const HeaderContainerContent = styled.header`

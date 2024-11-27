@@ -17,10 +17,10 @@ const StyledLinkButton = styled(LinkButton)`
   display: flex;
   justify-content: center;
 
-  color: ${(props) => props.theme.colors.ColorRichBlack};
+  color: ${(props) => props.theme.colors.projectLink};
 
   & :hover {
-    color: ${(props) => props.theme.colors.socialFgColor};
+    color: ${(props) => props.theme.colors.projectLinkHover};
   }
 `;
 
@@ -28,5 +28,6 @@ const LinkContainer = styled.div`
   display: flex;
   min-width: auto;
   padding: 0 1rem;
-  background-color: ${(props) => props.theme.colors.projectTitlePanel};
+  background-color: ${(props) => props.theme.colors.projectLinksPanel};
+  border-radius: 0 ${(props) => props.theme.innerBorderRadius} 0 0;
 `;

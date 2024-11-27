@@ -11,8 +11,8 @@ const CenteringContainer = styled.div`
   flex-direction: column;
 `;
 
-const VerticalSeperator = styled.div`
-  border: 1px solid grey;
+const Seperator = styled.div`
+  border: 1px solid ${(props) => props.theme.colors.seperator};
   margin: 16px 1rem;
 `;
 
@@ -55,4 +55,4 @@ const SubtitleText = styled.h3`
   }
 `;
 
-export { CenteringContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };
+export { CenteringContainer, Seperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };

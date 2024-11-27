@@ -38,6 +38,9 @@ const AppContainer = styled.div`
   background-color: ${(props) => props.theme.colors.primary};
   display: flex;
   justify-content: center;
+
+  scrollbar-width: thin;
+  scrollbar-color: ${(props) => `${props.theme.colors.scrollbarBar} ${props.theme.colors.scrollbarBack}`};
 `;
 
 const Main = styled.div`

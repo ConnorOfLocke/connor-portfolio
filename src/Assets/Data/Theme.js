@@ -3,31 +3,23 @@
 //import BackgroundImg from "../Images/Backgrounds/geometric-leaves-dark.webp";
 import BackgroundImg from "../Images/Backgrounds/seamless_paper_texture.png";
 
-//Gazzah Pink : rgba(245, 120, 244, 0.3) //F578E0
-//Gazzah Yellow : rgba(244 241 79, 0.3) //F4F14F
-//Gazzah green : rgba(110, 228, 120, 0.3) //6EE478
-//Gazzah Background : rgba(17, 64, 54, 0.3)
-//Gazzah Grey : C8C8C8
-//Gazzah outline: 737373
-// Gazzah Outline Black
-//Gazzah Mouth: F25C94
-//Gazza Tounge: DD5487
-
-//Paper : rgba(228, 226, 217)
-
-const ColorAlabaster = "rgba(228, 226, 217)";
-const ColorAlabaster_a = "rgba(228, 226, 217, 0.3)";
-const ColorRichBlack = "rgba(1, 28, 39)";
-
-const ColorOffWhite = "rgba(255,251,245)";
-
-const Pink = {
-  lighter: "rgba(247, 157, 232)",
-  light: "rgba(246, 145, 229)",
-  main: "rgba(245, 120, 244)",
-  dark: "rgba(220, 108, 201)",
-  darker: "rgba(196, 96, 179)",
-  darkerer: "rgba(196, 106, 181)",
+const theme = {
+  light: {
+    text: "rgb(11, 4, 4)",
+    background: "rgb(252, 248, 248)",
+    primary: "rgb(111, 200, 200)",
+    primary_darker: "rgb(58, 152, 152)",
+    secondary: "rgb(104, 192, 111)",
+    accent: "rgb(246, 188, 136)",
+  },
+  dark: {
+    text: "rgb(251, 244, 244)",
+    background: "rgb(7, 3, 3)",
+    primary: "rgb(55, 144, 144)",
+    primary_darker: "rgb(58, 152, 152)",
+    secondary: "rgb(63, 151, 71)",
+    accent: "rgb(119, 60, 9)",
+  },
 };
 
 const THEME = {
@@ -35,7 +27,7 @@ const THEME = {
   smallScreen: "800px",
   mediumScreen: "1080px",
 
-  largeHeaderHeight: "10rem",
+  largeHeaderHeight: "8rem",
   mediumHeaderHeight: "8rem",
   smallHeaderHeight: "6rem",
   mobileScreenHeight: "4rem",
@@ -44,6 +36,7 @@ const THEME = {
   minContentwidth: "320px",
   maxContentwidth: "80rem",
   borderRadius: "4rem",
+  innerBorderRadius: "3rem",
   iconSize: "1.5rem",
 
   largeProjectMediaSizePixels: "520",
@@ -54,35 +47,42 @@ const THEME = {
   black_transparent: "rbga(0,0,0,0)",
 
   colors: {
-    backgroundImage: BackgroundImg,
+    backgroundColor: theme.light.background,
+    backgroundImage: undefined,
 
-    primary: "transparent",
-    header: "rgba(18,17,17,1)",
-    header2: "rgba(38,37,37,1)",
-    header_trans: "rgba(18,17,17,0)",
+    header: theme.light.primary,
+    header2: theme.light.primary,
+    header_trans: theme.light.primary_trans,
 
-    headerText: Pink.light,
-    subtitleText: ColorRichBlack,
+    headerText: theme.light.text,
+    subtitleText: theme.light.text,
 
-    introHeader: ColorRichBlack,
-    introPanel: Pink.darkerer,
+    introHeader: theme.light.text,
+    introPanel: theme.light.primary,
+    introPanelShadow: theme.light.primary_darker,
+    introSeperator: theme.light.accent,
 
-    workPanel: Pink.darkerer,
-    workPanelSelected: Pink.darkerer,
-    workPanelHeaderText: Pink.lighter,
-    workPanelDateText: ColorRichBlack,
+    workPanel: theme.light.primary,
+    workPanelSelected: theme.light.primary,
+    workPanelHeaderText: theme.light.text,
+    workPanelDateText: theme.light.text,
 
-    projectListPanel: Pink.darkerer,
-    projectTitlePanel: ColorOffWhite,
-    projectTitleColor: ColorRichBlack,
+    projectListPanel: theme.light.primary,
+    projectTitlePanel: theme.light.primary,
+    projectLinksPanel: theme.light.secondary,
+    projectTitleColor: theme.light.text,
+    projectLink: theme.light.text,
+    projectLinkHover: theme.light.accent,
 
-    outroPanel: Pink.darkerer,
-    outroText: Pink.darkerer,
+    outroPanel: theme.light.primary,
+    outroText: theme.light.text,
 
-    greyAccent: ColorAlabaster_a,
-    favColor: "gold",
-    socialDefault: ColorAlabaster,
-    primaryTextColor: ColorRichBlack,
+    scrollbarBack: theme.light.background,
+    scrollbarBar: theme.light.primary,
+    seperator: theme.light.text,
+    favColor: theme.light.accent,
+    socialDefault: theme.light.text,
+    primaryTextColor: theme.light.text,
   },
 
   socialColors: {

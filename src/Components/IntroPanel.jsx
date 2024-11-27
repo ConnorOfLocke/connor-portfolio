@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProfileFace from "../Assets/Images/profile-face.jpg";
-import { HeaderText, SubtitleText } from "./Utils/Utils";
+import { HeaderText, SubtitleText, Seperator } from "./Utils/Utils";
 
 export default function IntroPanel() {
   return (
@@ -10,6 +10,7 @@ export default function IntroPanel() {
       </ProfileContainer>
       <TextContainer>
         <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
+        <IntroSeperator />
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
           I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
@@ -20,19 +21,21 @@ export default function IntroPanel() {
   );
 }
 
+const IntroSeperator = styled(Seperator)`
+  border: 1px solid ${(props) => props.theme.colors.introSeperator};
+`;
+
 const IntroPanelContainer = styled.div`
-  margin-top: 2rem;
   padding: 0.5rem;
+  margin: 8rem 0 8rem 0;
   height: auto;
-  background-color: ${(props) => props.theme.colors.introPanel};
   border-radius: ${(props) => props.theme.borderRadius};
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.colors.primaryTextColor};
+  border: 1rem solid ${(props) => props.theme.colors.introPanel};
 
   @media (min-width: ${(props) => props.theme.mediumScreen}) {
     float: none;
     display: flex;
     justify-content: center;
-    margin: 1rem 0 0 0;
   }
 `;
 

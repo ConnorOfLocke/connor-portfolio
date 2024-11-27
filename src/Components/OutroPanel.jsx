@@ -21,8 +21,9 @@ const OutroPanelContainer = styled.div`
   margin-top: 2rem;
   padding-bottom: 1rem;
   height: auto;
-  background-color: ${(props) => props.theme.colors.outroPanel};
+  border-radius: ${(props) => `${props.theme.borderRadius} ${props.theme.borderRadius} 0 0`};
+  border: 1rem solid ${(props) => props.theme.colors.outroPanel};
+  border-bottom: 0;
   display: flex;
   justify-content: center;
-  border-radius: ${(props) => `${props.theme.borderRadius} ${props.theme.borderRadius} 0 0`};
 `;
