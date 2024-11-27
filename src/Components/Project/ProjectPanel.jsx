@@ -42,7 +42,7 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
         </ProjectTitle>
         <StyledProjectLinks project={project} iconSize={themeContext.iconSize} $isFirst={isFirst} />
       </ProjectHeader>
-      <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />
+      <StyledProjectIcons project={project} iconSize={themeContext.iconSize} />
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
           {ProjectHasVideo(project) && <ProjectVideo project={project} videoSize={videoSize} />}
@@ -104,11 +104,23 @@ const ProjectInfo = styled.div`
   visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
 `;
 
-const SmallScreenIcons = styled(ProjectIcons)`
+const StyledProjectIcons = styled(ProjectIcons)`
   border-left: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
   border-bottom: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
   border-radius: ${(props) => ` 0 0 0 ${props.theme.borderRadius}`};
-  margin-left: 60%;
+
+  transition: margin 1s;
+  margin-left: 65%;
+  @media (max-width: ${({ theme }) => theme.mediumScreen}) {
+    margin-left: 50%;
+  }
+  @media (max-width: ${({ theme }) => theme.smallScreen}) {
+    margin-left: 20%;
+  }
+  @media (max-width: ${({ theme }) => theme.smallScreen}) {
+    margin-left: 5%;
+  }
+
   padding: 0 2rem;
   justify-content: center;
   //background-color: ${(props) => props.theme.colors.projectTitlePanel};

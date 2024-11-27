@@ -20,7 +20,7 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
       {isUnity && <IconWrapper iconID={"unity"} iconSize={iconSize} />}
       {isGameMaker && <IconWrapper iconID={"gamemaker"} iconSize={iconSize} />}
       {isReact && <IconWrapper iconID={"react"} iconSize={iconSize} />}
-      <Seperator />
+      <IconSeperator />
       <IconRow>
         {isIOS && <IconWrapper iconID={"ios"} iconSize={iconSize} />}
         {isAndroid && <IconWrapper iconID={"android"} iconSize={iconSize} />}
@@ -34,6 +34,10 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
     </ProjectIconContainer>
   );
 }
+
+const IconSeperator = styled(Seperator)`
+  border: 1px solid ${(props) => props.theme.colors.projectIconSeperator};
+`;
 
 const ProjectIconContainer = styled.div`
   display: flex;

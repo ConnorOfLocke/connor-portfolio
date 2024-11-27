@@ -10,7 +10,7 @@ export default function IntroPanel() {
       </ProfileContainer>
       <TextContainer>
         <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
-        <IntroSeperator />
+        <Seperator />
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
           I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
@@ -21,13 +21,9 @@ export default function IntroPanel() {
   );
 }
 
-const IntroSeperator = styled(Seperator)`
-  border: 1px solid ${(props) => props.theme.colors.introSeperator};
-`;
-
 const IntroPanelContainer = styled.div`
   padding: 0.5rem;
-  margin: 8rem 0 8rem 0;
+  margin-top: 8rem;
   height: auto;
   border-radius: ${(props) => props.theme.borderRadius};
   border: 1rem solid ${(props) => props.theme.colors.introPanel};
@@ -52,6 +48,8 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileImage = styled.img`
+  transition: height 1s;
+
   height: 28rem;
 
   @media (max-width: ${(props) => props.theme.mediumScreen}) {

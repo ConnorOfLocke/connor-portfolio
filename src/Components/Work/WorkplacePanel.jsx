@@ -35,14 +35,15 @@ const WorkplaceImageButtonContainer = styled.button`
 
   min-width: ${(props) => props.theme.minContentwidth};
 
+  transition: width height 1s;
   transition: box-shadow 0.1s;
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.colors.primaryTextColor};
+  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.colors.workPanelShadow};
   ${(props) =>
     props.$selected &&
     `box-shadow: none;
   `};
   &:hover {
-    box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.colors.primaryTextColor};
+    box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.colors.workPanelShadow};
     ${(props) =>
       props.$selected &&
       `box-shadow: none;

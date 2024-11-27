@@ -22,6 +22,8 @@ const SocialLinksStyled = styled(SocialLinks)`
 const HeaderContainer = styled.header`
   width: 101%;
 
+  transition: height 1s;
+
   height: ${({ theme }) => theme.largeHeaderHeight};
 
   @media (max-width: ${({ theme }) => theme.mediumScreen}) {

@@ -36,7 +36,7 @@ const THEME = {
 
   largeProjectMediaSizePixels: "520",
   mediumProjectMediaSizePixels: "360",
-  smallProjectMediaSizePixels: "240",
+  smallProjectMediaSizePixels: "200",
   mediaRatio: 9.0 / 16.0,
 
   black_transparent: "rbga(0,0,0,0)",
@@ -55,12 +55,12 @@ const THEME = {
     introHeader: theme.light.text,
     introPanel: theme.light.primary,
     introPanelShadow: theme.light.primary_darker,
-    introSeperator: theme.light.accent,
 
     workPanel: theme.light.primary,
     workPanelSelected: theme.light.primary,
     workPanelHeaderText: theme.light.text,
     workPanelDateText: theme.light.text,
+    workPanelShadow: theme.light.primary_darker,
 
     projectListPanel: theme.light.primary,
     projectTitlePanel: theme.light.primary,
@@ -68,16 +68,16 @@ const THEME = {
     projectTitleColor: theme.light.text,
     projectLink: theme.light.text,
     projectLinkHover: theme.light.accent,
+    projectIconSeperator: theme.light.text,
 
     outroPanel: theme.light.primary,
     outroText: theme.light.text,
 
     scrollbarBack: theme.light.background,
     scrollbarBar: theme.light.primary,
-    seperator: theme.light.text,
+    seperator: theme.light.accent,
     favColor: theme.light.accent,
     socialDefault: theme.light.text,
-    primaryTextColor: theme.light.text,
   },
 
   socialColors: {

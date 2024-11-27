@@ -63,7 +63,7 @@ export default function WorkPanel() {
     <WorkPanelContainer>
       <CenteringContainer>
         <StyledSubtitleText>
-          Take a squizz! These are all the places I've worked at and the games I’ve had a part in making.
+          Come take a look at the places I've worked at and the projects I’ve made.
         </StyledSubtitleText>
       </CenteringContainer>
       <WorkPanelGrid>{workplaceList}</WorkPanelGrid>
@@ -73,6 +73,9 @@ export default function WorkPanel() {
 
 const StyledSubtitleText = styled(SubtitleText)`
   color: ${(props) => props.theme.colors.headerText};
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem 0 2rem;
 `;
 
 const WorkPanelContainer = styled.div`
