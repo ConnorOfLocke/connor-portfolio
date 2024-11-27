@@ -10,7 +10,6 @@ export default function IntroPanel() {
       </ProfileContainer>
       <TextContainer>
         <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
-        <Seperator />
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
           I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
