@@ -1,8 +1,3 @@
-//import BackgroundImg from "../Images/Backgrounds/denim.webp";
-//import BackgroundImg from "../Images/Backgrounds/tactile_noise.png";
-//import BackgroundImg from "../Images/Backgrounds/geometric-leaves-dark.webp";
-import BackgroundImg from "../Images/Backgrounds/seamless_paper_texture.png";
-
 const theme = {
   light: {
     text: "rgb(11, 4, 4)",

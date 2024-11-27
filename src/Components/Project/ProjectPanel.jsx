@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import IconWrapper from "../Utils/IconWrapper";
 import ProjectLinks from "./ProjectLinks";
 import ProjectVideo from "./ProjectVideo";
-import { SubHeadertext, SubtitleText, Seperator } from "../Utils/Utils";
+import { SubHeadertext, SubtitleText } from "../Utils/Utils";
 import ProjectImages from "./ProjectImages";
 import { ScreenSizeContext } from "../ScreenSizeContext";
 import ProjectIcons from "./ProjectIcons";
@@ -40,7 +40,7 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
-        <ProjectLinks project={project} iconSize={themeContext.iconSize}></ProjectLinks>
+        <StyledProjectLinks project={project} iconSize={themeContext.iconSize} $isFirst={isFirst} />
       </ProjectHeader>
       <SmallScreenIcons project={project} iconSize={themeContext.iconSize} />
       <ProjectInfo $isOpen={open}>
@@ -89,6 +89,10 @@ const ProjectTitle = styled.button`
   & :hover {
     font-style: italic;
   }
+`;
+
+const StyledProjectLinks = styled(ProjectLinks)`
+  border-radius: ${(props) => (props.$isFirst ? `0 ${props.theme.innerBorderRadius} 0 0;` : "0")};
 `;
 
 const ProjectInfo = styled.div`
