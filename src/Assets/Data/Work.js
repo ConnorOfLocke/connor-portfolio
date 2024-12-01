@@ -10,6 +10,15 @@ import EasyBillProjectImage1 from "../Images/ProjectImages/bill1.png";
 import EasyBillProjectImage2 from "../Images/ProjectImages/bill2.png";
 import SMGProjectImage from "../Images/ProjectImages/smg_wallpaper.png";
 
+import Banner_EasyBillPay from "../Images/ProjectImages/Banners/Blowfish/EasyBillPay_Banner.png";
+import Banner_Homebase from "../Images/ProjectImages/Banners/Blowfish/Homebase_Banner.png";
+import Banner_Infinite from "../Images/ProjectImages/Banners/Blowfish/Infinite_Banner.png";
+import Banner_JackQuest from "../Images/ProjectImages/Banners/Blowfish/JackQuest_Banner.png";
+import Banner_Minesweeper from "../Images/ProjectImages/Banners/Blowfish/Minesweeper_Banner.png";
+import Banner_StormBoy from "../Images/ProjectImages/Banners/Blowfish/StormBoy_Banner.png";
+import Banner_WarTechFighters from "../Images/ProjectImages/Banners/Blowfish/WarTechFigher_Banner.png";
+import Banner_Whipseey from "../Images/ProjectImages/Banners/Blowfish/Whipseey_Banner.png";
+
 //import BraveheartVid from "../Video/Bravehearts.mp4";
 //import IPGOVid from "../Video/IPGO.mp4";
 import VirtualFarmVid from "../Video/VirtualFarm.mp4";
@@ -138,6 +147,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/storm-boy",
           youtubeLink: "https://www.youtube.com/watch?v=j5VFRdhYydo",
           otherVideoLink: undefined,
+          bannerImg: Banner_StormBoy,
           favorite: true,
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4", "IOS", "ANDROID"],
@@ -150,6 +160,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/wartech",
           youtubeLink: "https://www.youtube.com/watch?v=1aSo4gbXUCY",
           otherVideoLink: undefined,
+          bannerImg: Banner_WarTechFighters,
           favorite: false,
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
@@ -162,6 +173,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/infinite",
           youtubeLink: "https://www.youtube.com/watch?v=JMalnJlGpEY",
           otherVideoLink: undefined,
+          bannerImg: Banner_Infinite,
           favorite: false,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
@@ -174,6 +186,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/whipseey",
           youtubeLink: "https://www.youtube.com/watch?v=EQw_CpQLc-k",
           otherVideoLink: undefined,
+          bannerImg: Banner_Whipseey,
           favorite: false,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
@@ -185,6 +198,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/ms-genius",
           youtubeLink: "https://www.youtube.com/watch?v=Ksjo0CA3B60",
           otherVideoLink: undefined,
+          bannerImg: Banner_Minesweeper,
           favorite: true,
           engine: "Unity",
           target: ["SWITCH", "XBOXONE", "PS4"],
@@ -197,6 +211,7 @@ const WORK = {
           urlLink: "https://kids.scholastic.com/kid/homebase/",
           youtubeLink: "https://www.youtube.com/watch?v=uMnBUbLUKGo",
           otherVideoLink: undefined,
+          bannerImg: Banner_Homebase,
           favorite: true,
           engine: "Unity",
           target: ["IOS", "ANDROID", "WebGL"],
@@ -209,6 +224,7 @@ const WORK = {
           urlLink: "https://www.blowfishstudios.com/game/jack-quest/",
           youtubeLink: "https://www.youtube.com/watch?v=053J1i-zwMg",
           otherVideoLink: undefined,
+          bannerImg: Banner_JackQuest,
           favorite: false,
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
@@ -220,6 +236,7 @@ const WORK = {
           urlLink: "https://www.easybillpay.com.au/",
           youtubeLink: undefined,
           otherVideoLink: undefined,
+          bannerImg: Banner_EasyBillPay,
           favorite: false,
           engine: undefined,
           target: ["IOS", "ANDROID", "Web"],

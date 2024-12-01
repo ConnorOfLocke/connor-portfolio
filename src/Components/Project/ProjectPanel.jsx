@@ -42,6 +42,11 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
         </ProjectTitle>
         <StyledProjectLinks project={project} iconSize={themeContext.iconSize} $isFirst={isFirst} />
       </ProjectHeader>
+      {project.bannerImg && (
+        <ProjectBannerContainer>
+          <ProjectBanner src={project.bannerImg} />
+        </ProjectBannerContainer>
+      )}
       <StyledProjectIcons project={project} iconSize={themeContext.iconSize} />
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
@@ -102,6 +107,21 @@ const ProjectInfo = styled.div`
   padding: ${(props) => (props.$isOpen ? "0.5rem 2rem 2rem 2rem" : "0")};
   height: ${(props) => (props.$isOpen ? "100%" : "0")};
   visibility: ${(props) => (props.$isOpen ? "visible" : "hidden")};
+`;
+
+const ProjectBannerContainer = styled.div`
+  position: relative;
+  overflow-x: hidden;
+  height: 4rem;
+`;
+
+const ProjectBanner = styled.img`
+  position: absolute;
+  height: 4rem;
+
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -moz-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
 `;
 
 const StyledProjectIcons = styled(ProjectIcons)`
