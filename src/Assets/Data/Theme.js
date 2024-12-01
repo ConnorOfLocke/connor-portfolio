@@ -66,6 +66,7 @@ const THEME = {
     projectTitlePanel: theme.light.primary,
     projectLinksPanel: theme.light.secondary,
     projectTitleColor: theme.light.text,
+    projectLinkBackground: theme.light.background,
     projectLink: theme.light.text,
     projectLinkHover: theme.light.accent,
     projectIconSeperator: theme.light.text,

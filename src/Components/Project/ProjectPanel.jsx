@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { ThemeContext } from "styled-components";
 import { useState, useContext } from "react";
 import IconWrapper from "../Utils/IconWrapper";
-import ProjectLinks from "./ProjectLinks";
-import ProjectVideo from "./ProjectVideo";
+import ProjectLinks from "./ProjectParts/ProjectLinks";
+import ProjectVideo from "./ProjectParts/ProjectVideo";
 import { SubHeadertext, SubtitleText } from "../Utils/Utils";
-import ProjectImages from "./ProjectImages";
+import ProjectImages from "./ProjectParts/ProjectImages";
 import { ScreenSizeContext } from "../ScreenSizeContext";
-import ProjectIcons from "./ProjectIcons";
+import ProjectIcons from "./ProjectParts/ProjectIcons";
 
 function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
@@ -42,12 +42,12 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
         </ProjectTitle>
         <StyledProjectLinks project={project} iconSize={themeContext.iconSize} $isFirst={isFirst} />
       </ProjectHeader>
-      {project.bannerImg && (
-        <ProjectBannerContainer>
-          <ProjectBanner src={project.bannerImg} />
-        </ProjectBannerContainer>
-      )}
-      <StyledProjectIcons project={project} iconSize={themeContext.iconSize} />
+
+      <ProjectBannerContainer>
+        {project.bannerImg && <ProjectBanner src={project.bannerImg} />}
+        <StyledProjectIcons project={project} iconSize={themeContext.iconSize} />
+      </ProjectBannerContainer>
+
       <ProjectInfo $isOpen={open}>
         <StyledProjectVideo>
           {ProjectHasVideo(project) && <ProjectVideo project={project} videoSize={videoSize} />}
@@ -119,12 +119,15 @@ const ProjectBanner = styled.img`
   position: absolute;
   height: 4rem;
 
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -moz-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  -moz-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
 `;
 
 const StyledProjectIcons = styled(ProjectIcons)`
+  position: absolute;
+  right: 0;
+
   border-left: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
   border-bottom: 1rem solid ${(props) => props.theme.colors.projectTitlePanel};
   border-radius: ${(props) => ` 0 0 0 ${props.theme.borderRadius}`};
@@ -143,7 +146,7 @@ const StyledProjectIcons = styled(ProjectIcons)`
 
   padding: 0 2rem;
   justify-content: center;
-  //background-color: ${(props) => props.theme.colors.projectTitlePanel};
+  background-color: ${(props) => props.theme.colors.projectLinkBackground};
 `;
 
 const StyledProjectVideo = styled.div`

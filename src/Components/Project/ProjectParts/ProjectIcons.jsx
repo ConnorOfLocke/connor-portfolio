@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import IconWrapper from "../Utils/IconWrapper";
-import { Seperator } from "../Utils/Utils";
+import IconWrapper from "../../Utils/IconWrapper";
+import { Seperator } from "../../Utils/Utils";
 
 export default function ProjectIcons({ project, iconSize, ...props }) {
   const isUnity = project.engine === "Unity";

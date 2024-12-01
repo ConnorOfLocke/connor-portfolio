@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import IconWrapper from "../Utils/IconWrapper";
-import LinkButton from "../Utils/LinkButton";
+import IconWrapper from "../../Utils/IconWrapper";
+import LinkButton from "../../Utils/LinkButton";
 
 export default function ProjectLinks({ project, iconSize, ...props }) {
   return (
