@@ -1,4 +1,9 @@
-# Getting Started with Create React App
+# My's Portfolio Website!
+
+Site made with React to show off my portfolio of games!
+
+Bluesky: https://bsky.app/profile/spiggleedoo.bsky.social
+LinkedIn: https://www.linkedin.com/in/connor-locke-warburton-a8287890/
 
 ### Development
 
@@ -10,16 +15,4 @@
 
 ### Release
 
-## Available Scripts
-
-### `npm start`
-
-### `npm run build`
-
-### `npm run eject`
-
-### `npm run clean`
-
-### `npm run reinstall`
-
-### `npm run rebuild`
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f65cd394-25b5-405b-a8fe-5ae1f24df43a/deploy-status)](https://app.netlify.com/sites/connor-portfolio-release/deploys)
