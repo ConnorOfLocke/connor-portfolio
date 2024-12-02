@@ -7,7 +7,7 @@ export default function SocialIcon({ socialId, altIcon }) {
   const themeContext = useContext(ThemeContext);
   const { widerThanMedium, widerThanMobile } = useContext(ScreenSizeContext);
 
-  const socialColor = themeContext.socialColors[socialId] ?? themeContext.light.socialDefaultColor;
+  const socialColor = themeContext.socialColors[socialId] ?? themeContext.colors.socialDefault;
 
   let iconSize = "3rem";
   let innerIconSize = "2rem";
@@ -25,8 +25,8 @@ export default function SocialIcon({ socialId, altIcon }) {
       altIcon={altIcon}
       backgroundColor={altIcon ? socialColor : "transparent"}
       foregroundColor={altIcon ? "white" : socialColor}
-      altIconSize={iconSize}
-      altInnerIconSize={innerIconSize}
+      iconSize={iconSize}
+      innerIconSize={innerIconSize}
     />
   );
 }

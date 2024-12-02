@@ -11,14 +11,14 @@ const CenteringContainer = styled.div`
   flex-direction: column;
 `;
 
-const VerticalSeperator = styled.div`
-  border: 1px solid grey;
+const Seperator = styled.div`
+  border: 1px solid ${(props) => props.theme.colors.seperator};
   margin: 16px 1rem;
 `;
 
 const HeaderText = styled.h1`
   font-size: 48px;
-  color: ${(props) => props.theme.light.headerTextColor};
+  color: ${(props) => props.theme.colors.headerText};
 
   @media (max-width: ${(props) => props.theme.mediumScreen}) {
     font-size: 32px;
@@ -33,7 +33,7 @@ const HeaderText = styled.h1`
 
 const SubHeadertext = styled.h2`
   font-size: 24px;
-  color: ${(props) => props.theme.light.headerTextColor};
+  color: ${(props) => props.theme.colors.headerText};
 
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     font-size: 20px;
@@ -45,7 +45,7 @@ const SubHeadertext = styled.h2`
 
 const SubtitleText = styled.h3`
   font-size: 20px;
-  color: ${(props) => props.theme.light.headerTextColor};
+  color: ${(props) => props.theme.colors.subtitleText};
 
   @media (max-width: ${(props) => props.theme.smallScreen}) {
     font-size: 18px;
@@ -55,4 +55,4 @@ const SubtitleText = styled.h3`
   }
 `;
 
-export { CenteringContainer, VerticalSeperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };
+export { CenteringContainer, Seperator, HeaderText, SubHeadertext, SubtitleText, convertRemToPixels };

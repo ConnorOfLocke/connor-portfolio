@@ -22,10 +22,8 @@ const ProjectImageStack = styled.ol`
 `;
 
 const ProjectImage = styled.img`
-  width: fit-content;
   height: ${(props) => props.theme.largeProjectMediaSizePixels * props.theme.mediaRatio}px;
   @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    width: fit-content;
     height: ${(props) => props.theme.smallProjectMediaSizePixels * props.theme.mediaRatio}px;
   }
 `;

@@ -9,7 +9,7 @@ export default function IntroPanel() {
         <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
       </ProfileContainer>
       <TextContainer>
-        <HeaderText>Games Developer with +8 Years of experience.</HeaderText>
+        <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
         <SubtitleText>Howdy howdy howdy!</SubtitleText>
         <SubtitleText>
           I’m Connor and I’ve been making games for a while. I’ve been as developer on projects for IOS, Android, PC,
@@ -21,19 +21,21 @@ export default function IntroPanel() {
 }
 
 const IntroPanelContainer = styled.div`
-  margin-top: 2rem;
   padding: 0.5rem;
+  margin-top: 8rem;
   height: auto;
-  background-color: ${(props) => props.theme.light.tertiary_light_trans};
   border-radius: ${(props) => props.theme.borderRadius};
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.light.primaryTextColor};
+  border: 1rem solid ${(props) => props.theme.colors.introPanel};
 
   @media (min-width: ${(props) => props.theme.mediumScreen}) {
     float: none;
     display: flex;
     justify-content: center;
-    margin: 1rem 0 0 0;
   }
+`;
+
+const StyledHeaderText = styled(HeaderText)`
+  color: ${(props) => props.theme.colors.introHeader};
 `;
 
 const TextContainer = styled.div`
@@ -45,6 +47,8 @@ const ProfileContainer = styled.div`
 `;
 
 const ProfileImage = styled.img`
+  transition: height 1s;
+
   height: 28rem;
 
   @media (max-width: ${(props) => props.theme.mediumScreen}) {
@@ -56,7 +60,6 @@ const ProfileImage = styled.img`
   @media (max-width: ${(props) => props.theme.mobileScreen}) {
     height: 8rem;
   }
-  width: fit-content;
   padding: 1rem;
   border-radius: 4rem;
 `;

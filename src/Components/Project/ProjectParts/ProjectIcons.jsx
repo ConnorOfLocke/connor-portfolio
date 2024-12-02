@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import IconWrapper from "../../Utils/IconWrapper";
-import { VerticalSeperator } from "../../Utils/Utils";
+import { Seperator } from "../../Utils/Utils";
 
 export default function ProjectIcons({ project, iconSize, ...props }) {
   const isUnity = project.engine === "Unity";
@@ -17,23 +17,27 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
 
   return (
     <ProjectIconContainer {...props}>
-      {isUnity && <IconWrapper iconID={"unity"} size={iconSize} />}
-      {isGameMaker && <IconWrapper iconID={"gamemaker"} size={iconSize} />}
-      {isReact && <IconWrapper iconID={"react"} size={iconSize} />}
-      <VerticalSeperator />
+      {isUnity && <IconWrapper iconID={"unity"} iconSize={iconSize} />}
+      {isGameMaker && <IconWrapper iconID={"gamemaker"} iconSize={iconSize} />}
+      {isReact && <IconWrapper iconID={"react"} iconSize={iconSize} />}
+      <IconSeperator />
       <IconRow>
-        {isIOS && <IconWrapper iconID={"ios"} size={iconSize} />}
-        {isAndroid && <IconWrapper iconID={"android"} size={iconSize} />}
-        {isPlaystation && <IconWrapper iconID={"xbox"} size={iconSize} />}
-        {isXbox && <IconWrapper iconID={"playstation"} size={iconSize} />}
-        {isPC && <IconWrapper iconID={"pc"} size={iconSize} />}
-        {isWebGl && <IconWrapper iconID={"webgl"} size={iconSize} />}
-        {isWeb && <IconWrapper iconID={"web"} size={iconSize} />}
-        {project.target.length <= 0 && <IconWrapper iconID={"mystery"} size={iconSize} />}
+        {isIOS && <IconWrapper iconID={"ios"} iconSize={iconSize} />}
+        {isAndroid && <IconWrapper iconID={"android"} iconSize={iconSize} />}
+        {isPlaystation && <IconWrapper iconID={"xbox"} iconSize={iconSize} />}
+        {isXbox && <IconWrapper iconID={"playstation"} iconSize={iconSize} />}
+        {isPC && <IconWrapper iconID={"pc"} iconSize={iconSize} />}
+        {isWebGl && <IconWrapper iconID={"webgl"} iconSize={iconSize} />}
+        {isWeb && <IconWrapper iconID={"web"} iconSize={iconSize} />}
+        {project.target.length <= 0 && <IconWrapper iconID={"mystery"} iconSize={iconSize} />}
       </IconRow>
     </ProjectIconContainer>
   );
 }
+
+const IconSeperator = styled(Seperator)`
+  border: 1px solid ${(props) => props.theme.colors.projectIconSeperator};
+`;
 
 const ProjectIconContainer = styled.div`
   display: flex;

@@ -43,8 +43,8 @@ const iconPairs = [
 export default function IconWrapper({
   iconID,
   altIcon,
-  altIconSize,
-  altInnerIconSize,
+  iconSize,
+  innerIconSize,
   backgroundColor,
   foregroundColor,
   ...props
@@ -58,11 +58,11 @@ export default function IconWrapper({
         <IconBackground
           $backgroundColor={backgroundColor}
           $foregroundColor={foregroundColor}
-          $iconSize={altIconSize}
+          $iconSize={iconSize}
           {...props}
         >
           <CenteringContainer>
-            <iconPair.icon size={altIcon ? altInnerIconSize : altIconSize} />
+            <iconPair.icon size={altIcon ? innerIconSize : iconSize} />
           </CenteringContainer>
         </IconBackground>
       )}
