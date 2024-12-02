@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import ProfileFace from "../Assets/Images/profile-face.jpg";
 import { HeaderText, SubtitleText } from "./Utils/Utils";
 
 export default function IntroPanel() {
   return (
     <IntroPanelContainer>
       <ProfileContainer>
-        <ProfileImage src={ProfileFace} alt="Profile pic of Connor Locke-Warburton" />
+        <ProfileImage src={"/profile-face.jpg"} alt="Profile pic of Connor Locke-Warburton" />
       </ProfileContainer>
       <TextContainer>
         <StyledHeaderText>Games Developer with +8 Years of experience.</StyledHeaderText>
