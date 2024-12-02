@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ProfileFace from "../Assets/Images/profile-face.jpg";
-import { HeaderText, SubtitleText, Seperator } from "./Utils/Utils";
+import { HeaderText, SubtitleText } from "./Utils/Utils";
 
 export default function IntroPanel() {
   return (
