@@ -15,7 +15,7 @@ export default function SocialLinks({ altIcon, ...props }) {
   );
 }
 
-const SocialList = styled.div`
+const SocialList = styled.nav`
   display: flex;
   flex-direction: row;
   align-items: center;

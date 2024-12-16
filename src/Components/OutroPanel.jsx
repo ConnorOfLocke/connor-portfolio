@@ -17,7 +17,7 @@ const SubtitleTextCentered = styled(SubtitleText)`
   text-align: center;
 `;
 
-const OutroPanelContainer = styled.div`
+const OutroPanelContainer = styled.section`
   margin-top: 2rem;
   padding-bottom: 1rem;
   height: auto;

@@ -14,6 +14,7 @@ export default function WorkPanel() {
     if (selectedWorkplaceTitle) {
       const element = document.getElementById(selectedWorkplaceTitle);
       const scrollElement = document.getElementById("scrollContainer");
+
       if (element && scrollElement) {
         const headerPixels = convertRemToPixels(getHeaderHeight());
         const y = element.getBoundingClientRect().top + scrollElement.scrollTop - headerPixels;
@@ -78,7 +79,7 @@ const StyledSubtitleText = styled(SubtitleText)`
   padding: 0 2rem 0 2rem;
 `;
 
-const WorkPanelContainer = styled.div`
+const WorkPanelContainer = styled.section`
   margin: 1rem 0;
 `;
 

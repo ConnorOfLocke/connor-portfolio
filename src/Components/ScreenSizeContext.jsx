@@ -1,5 +1,6 @@
-import { createContext, useCallback, useEffect, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 import { ThemeContext } from "styled-components";
+import useResize from "./hooks/useResize.jsx";
 
 const INITIAL_SCREEN_SIZE = {
   widerThanMedium: false,
@@ -12,6 +13,7 @@ export const ScreenSizeContext = createContext({ ...INITIAL_SCREEN_SIZE });
 
 export default function ScreenSizeContextProvider({ children }) {
   const themeContext = useContext(ThemeContext);
+
   const [screenSize, setScreenSizes] = useState({ ...INITIAL_SCREEN_SIZE });
 
   const handleResize = useCallback(() => {
@@ -38,6 +40,8 @@ export default function ScreenSizeContextProvider({ children }) {
     });
   }, [themeContext]);
 
+  useResize(handleResize);
+
   const getHeaderHeight = useCallback(() => {
     let headerHeight = themeContext.largeHeaderHeight;
 
@@ -51,18 +55,6 @@ export default function ScreenSizeContextProvider({ children }) {
 
     return headerHeight;
   }, [themeContext, screenSize]);
-
-  //call it on load
-  useEffect(() => {
-    handleResize();
-  }, [handleResize]);
-
-  useEffect(() => {
-    const listener = window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", listener);
-    };
-  }, [handleResize]);
 
   const screenSizeCTX = {
     ...screenSize,
