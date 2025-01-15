@@ -3,12 +3,14 @@ import BlowfishPanelimage from "../Images/blowfish-panel.png";
 import PlaysidePanelimage from "../Images/playside-panel.png";
 import CTGPanelimage from "../Images/ctg-panel.png";
 import SMGPanelimage from "../Images/smg-panel.png";
+import PersonalPanelimage from "../Images/personal-panel.png";
 
 import ASMRProjectImage1 from "../Images/ProjectImages/asmr1.png";
 import ASMRProjectImage2 from "../Images/ProjectImages/asmr2.png";
 import EasyBillProjectImage1 from "../Images/ProjectImages/bill1.png";
 import EasyBillProjectImage2 from "../Images/ProjectImages/bill2.png";
 import SMGProjectImage from "../Images/ProjectImages/smg_wallpaper.png";
+import SketchAThing from "../Images/ProjectImages/sketchathing.png";
 
 import Banner_EasyBillPay from "../Images/ProjectImages/Banners/Blowfish/EasyBillPay_Banner.png";
 import Banner_Homebase from "../Images/ProjectImages/Banners/Blowfish/Homebase_Banner.png";
@@ -30,6 +32,8 @@ import Bannner_SMG from "../Images/ProjectImages/Banners/SMG_Banner.png";
 import Banner_ASMR from "../Images/ProjectImages/Banners/Playside/ASMR_Banner.png";
 import Banner_AnimalWarfare from "../Images/ProjectImages/Banners/Playside/AnimalWarfare_Banner.png";
 import Banner_Equestriad from "../Images/ProjectImages/Banners/Playside/Equestriad_Banner.png";
+
+import Banner_Sketchathing from "../Images/ProjectImages/Banners/SketchAThingBanner.png";
 
 //import BraveheartVid from "../Video/Bravehearts.mp4";
 //import IPGOVid from "../Video/IPGO.mp4";
@@ -60,7 +64,8 @@ const WORK = {
         },
         {
           title: "Good Knight Story",
-          urlLink: "https://apps.apple.com/us/app/good-knight-story/id1067684327",
+          urlLink:
+            "https://apps.apple.com/us/app/good-knight-story/id1067684327",
           youtubeLink: "https://www.youtube.com/watch?v=qaFXl0faMV4",
           otherVideoLink: undefined,
           favorite: false,
@@ -84,7 +89,8 @@ const WORK = {
         },
         {
           title: "Ghosts 'n Guns",
-          urlLink: "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
+          urlLink:
+            "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
           youtubeLink: "https://www.youtube.com/watch?v=1AcUtLczuV8",
           otherVideoLink: undefined,
           favorite: true,
@@ -96,7 +102,8 @@ const WORK = {
         },
         {
           title: "Unroll Me 2",
-          urlLink: "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
+          urlLink:
+            "https://apps.apple.com/us/app/ghosts-n-guns-ar/id1312708394",
           youtubeLink: "https://www.youtube.com/watch?v=BN1zR9cLIBs",
           otherVideoLink: undefined,
           favorite: false,
@@ -115,7 +122,8 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
-          description: "Perspective changing Arcade game. QA’d and implemented reward systems and analytics.",
+          description:
+            "Perspective changing Arcade game. QA’d and implemented reward systems and analytics.",
         },
       ],
       franchises: [
@@ -143,7 +151,8 @@ const WORK = {
             },
           ],
           images: undefined,
-          description: "Ported and updated these games to wider 64-Bit IOS devices.",
+          description:
+            "Ported and updated these games to wider 64-Bit IOS devices.",
         },
       ],
     },
@@ -203,7 +212,8 @@ const WORK = {
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
-          description: "Kirby inspired 2D platformer. Like “Infinte”, Ported to consoles and localized it.",
+          description:
+            "Kirby inspired 2D platformer. Like “Infinte”, Ported to consoles and localized it.",
         },
         {
           title: "Minesweeper Genius",
@@ -241,7 +251,8 @@ const WORK = {
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
-          description: "2D action platformer - Setup the porting, localization and ported the DLC for Consoles.",
+          description:
+            "2D action platformer - Setup the porting, localization and ported the DLC for Consoles.",
         },
         {
           title: "Easy Bill Pay",
@@ -268,7 +279,8 @@ const WORK = {
       projects: [
         {
           title: "Animal Warfare",
-          urlLink: "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
+          urlLink:
+            "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
           youtubeLink: "https://www.youtube.com/watch?v=M8Hwh5s8XJI",
           otherVideoLink: undefined,
           bannerImg: Banner_AnimalWarfare,
@@ -281,7 +293,8 @@ const WORK = {
         },
         {
           title: "FEI Equestriad: World Tour",
-          urlLink: "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
+          urlLink:
+            "https://play.google.com/store/apps/details?gl=US&hl=en_AU&id=com.playsidestudios.animal",
           youtubeLink: "https://www.youtube.com/watch?v=t84zWpA4EQo",
           otherVideoLink: undefined,
           bannerImg: Banner_Equestriad,
@@ -294,7 +307,8 @@ const WORK = {
         },
         {
           title: "Sensations ASMR",
-          urlLink: "https://apps.apple.com/au/app/sensations-relaxing-games/id1530126991",
+          urlLink:
+            "https://apps.apple.com/au/app/sensations-relaxing-games/id1530126991",
           youtubeLink: undefined,
           otherVideoLink: undefined,
           bannerImg: Banner_ASMR,
@@ -400,10 +414,33 @@ const WORK = {
           engine: "Unity",
           target: [],
           images: [SMGProjectImage],
-          description: "Contracted to help with gameplay but branched into animation and asset importing.",
+          description:
+            "Contracted to help with gameplay but branched into animation and asset importing.",
         },
       ],
       franchises: [],
+    },
+    {
+      title: "Personal Projects",
+      role: "For sport and learning!",
+      startDate: "",
+      endDate: "",
+      panelImg: PersonalPanelimage,
+      projects: [
+        {
+          title: "Sketch a thing!",
+          urlLink: "https://sketchathing.com",
+          youtubeLink: undefined,
+          otherVideoLink: undefined,
+          bannerImg: Banner_Sketchathing,
+          favorite: false,
+          engine: "React",
+          target: ["Web"],
+          images: [SketchAThing],
+          description:
+            "Tool for when you don't know what to draw. Made for timed sketching sessions with randomised prompts. Made for the sport and thrill of it but mostly test my front-end skills on a full project of my own creation",
+        },
+      ],
     },
   ],
 };
