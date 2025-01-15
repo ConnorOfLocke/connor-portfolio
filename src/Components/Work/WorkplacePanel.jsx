@@ -8,7 +8,10 @@ export default function WorkplacePanel({ workplace, ...props }) {
       <TextArea>
         <StyledSubHeaderText>{workplace.title}</StyledSubHeaderText>
         <DateText>
-          {workplace.role} - {workplace.startDate} to {workplace.endDate}
+          {workplace.role}{" "}
+          {workplace.startDate &&
+            workplace.endDate &&
+            `${workplace.startDate} to ${workplace.endDate}`}
         </DateText>
       </TextArea>
     </WorkplaceImageButtonContainer>
@@ -29,7 +32,9 @@ const WorkplaceImageButtonContainer = styled.button`
 
   background-color: ${(props) => props.theme.colors.workPanel};
   ${(props) => props.$selected && `font-style: italic;`};
-  ${(props) => props.$selected && `background-color: ${props.theme.colors.workPanelSelected};`};
+  ${(props) =>
+    props.$selected &&
+    `background-color: ${props.theme.colors.workPanelSelected};`};
 
   border-radius: ${(props) => props.theme.borderRadius};
 
@@ -37,13 +42,15 @@ const WorkplaceImageButtonContainer = styled.button`
 
   transition: width height 1s;
   transition: box-shadow 0.1s;
-  box-shadow: 0px 0px 0px, 3px 3px 3px ${(props) => props.theme.colors.workPanelShadow};
+  box-shadow: 0px 0px 0px,
+    3px 3px 3px ${(props) => props.theme.colors.workPanelShadow};
   ${(props) =>
     props.$selected &&
     `box-shadow: none;
   `};
   &:hover {
-    box-shadow: 0px 0px 0px, 4px 4px 4px ${(props) => props.theme.colors.workPanelShadow};
+    box-shadow: 0px 0px 0px,
+      4px 4px 4px ${(props) => props.theme.colors.workPanelShadow};
     ${(props) =>
       props.$selected &&
       `box-shadow: none;
@@ -64,5 +71,4 @@ const WorkplaceImage = styled.img`
   border-radius: ${(props) => props.theme.borderRadius};
   align-self: center;
   width: 100%;
-  height: 100%;
 `;
