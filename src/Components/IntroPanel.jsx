@@ -19,7 +19,7 @@ export default function IntroPanel() {
   );
 }
 
-const IntroPanelContainer = styled.div`
+const IntroPanelContainer = styled.section`
   padding: 0.5rem;
   margin-top: 8rem;
   height: auto;
