@@ -14,6 +14,7 @@ import { SlLink, SlArrowRight, SlArrowDown } from "react-icons/sl";
 import { SiGamemaker, SiWebgl } from "react-icons/si";
 import { IoLogoAndroid } from "react-icons/io";
 import { FaComputer } from "react-icons/fa6";
+import { BsNintendoSwitch } from "react-icons/bs";
 import { TbDeviceDesktopQuestion } from "react-icons/tb";
 import { MdEmail } from "react-icons/md";
 import { CenteringContainer } from "./Utils";
@@ -28,6 +29,7 @@ const iconPairs = [
   { id: "android", icon: IoLogoAndroid },
   { id: "pc", icon: FaComputer },
   { id: "xbox", icon: FaXbox },
+  { id: "switch", icon: BsNintendoSwitch },
   { id: "playstation", icon: FaPlaystation },
   { id: "webgl", icon: SiWebgl },
   { id: "react", icon: FaReact },
@@ -79,7 +81,8 @@ const IconBackground = styled.div`
   justify-content: center;
 
   ${(props) => {
-    if (props.$iconSize) return ` width: ${props.$iconSize}; height: ${props.$iconSize}`;
+    if (props.$iconSize)
+      return ` width: ${props.$iconSize}; height: ${props.$iconSize}`;
   }}
 `;
 
