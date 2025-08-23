@@ -3,7 +3,11 @@ import { useState, useContext, useEffect } from "react";
 import WORK from "../../Assets/Data/Work.js";
 import WorkplacePanel from "./WorkplacePanel.jsx";
 import ProjectList from "../Project/ProjectList.jsx";
-import { CenteringContainer, convertRemToPixels, SubtitleText } from "../Utils/Utils.jsx";
+import {
+  CenteringContainer,
+  convertRemToPixels,
+  SubtitleText,
+} from "../Utils/Utils.jsx";
 import { ScreenSizeContext } from "../ScreenSizeContext.jsx";
 
 export default function WorkPanel() {
@@ -17,7 +21,10 @@ export default function WorkPanel() {
 
       if (element && scrollElement) {
         const headerPixels = convertRemToPixels(getHeaderHeight());
-        const y = element.getBoundingClientRect().top + scrollElement.scrollTop - headerPixels;
+        const y =
+          element.getBoundingClientRect().top +
+          scrollElement.scrollTop -
+          headerPixels;
         scrollElement.scrollTo({ top: y, behavior: "smooth" });
       }
     }
@@ -25,7 +32,9 @@ export default function WorkPanel() {
 
   const WorkplacesData = [...WORK.workplaces].reverse();
 
-  const workplaceDataIndex = WorkplacesData.findIndex((place) => place.title === selectedWorkplaceTitle);
+  const workplaceDataIndex = WorkplacesData.findIndex(
+    (place) => place.title === selectedWorkplaceTitle
+  );
   const workplaceData = WorkplacesData[workplaceDataIndex];
 
   function handleWorkplaceSelected(workplace) {
@@ -48,7 +57,8 @@ export default function WorkPanel() {
 
   //emplace the project list
   if (workplaceData) {
-    const index = Math.floor(workplaceDataIndex / (widerThanMedium ? 2 : 1)) + 2;
+    const index =
+      Math.floor(workplaceDataIndex / (widerThanMedium ? 2 : 1)) + 2;
 
     workplaceList.push(
       <ProjectList
@@ -64,7 +74,8 @@ export default function WorkPanel() {
     <WorkPanelContainer>
       <CenteringContainer>
         <StyledSubtitleText>
-          Come take a look at the places I've worked at and the projects I’ve made.
+          Come take a look at the places I've worked at and the projects I’ve
+          worked on.
         </StyledSubtitleText>
       </CenteringContainer>
       <WorkPanelGrid>{workplaceList}</WorkPanelGrid>

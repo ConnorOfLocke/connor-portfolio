@@ -5,12 +5,20 @@ export default function ProjectImages({ project }) {
     <>
       {project.images && project.images.length > 1 && (
         <ProjectImageStack>
-          <ProjectOverImage src={project.images[0]} alt={project.title + 0} />
-          <ProjectUnderImage src={project.images[1]} alt={project.title + 1} />
+          <ProjectOverImage
+            src={project.images[0]}
+            alt={project.imagesAltText[0]}
+          />
+          <ProjectUnderImage
+            src={project.images[1]}
+            alt={project.imagesAltText[1]}
+          />
         </ProjectImageStack>
       )}
 
-      {project.images && project.images.length === 1 && <ProjectImage src={project.images[0]} alt={project.title} />}
+      {project.images && project.images.length === 1 && (
+        <ProjectImage src={project.images[0]} alt={project.imagesAltText[0]} />
+      )}
     </>
   );
 }
@@ -22,9 +30,11 @@ const ProjectImageStack = styled.ol`
 `;
 
 const ProjectImage = styled.img`
-  height: ${(props) => props.theme.largeProjectMediaSizePixels * props.theme.mediaRatio}px;
+  height: ${(props) =>
+    props.theme.largeProjectMediaSizePixels * props.theme.mediaRatio}px;
   @media (max-width: ${(props) => props.theme.mediumScreen}) {
-    height: ${(props) => props.theme.smallProjectMediaSizePixels * props.theme.mediaRatio}px;
+    height: ${(props) =>
+      props.theme.smallProjectMediaSizePixels * props.theme.mediaRatio}px;
   }
 `;
 
