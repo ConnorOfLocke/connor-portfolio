@@ -13,7 +13,12 @@ function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
 }
 
-export default function ProjectPanel({ project, isFirst, isLast }) {
+export default function ProjectPanel({
+  project,
+  isFirst,
+  isLast,
+  ignoreDropdown,
+}) {
   const themeContext = useContext(ThemeContext);
   const { widerThanMedium, widerThanSmall } = useContext(ScreenSizeContext);
 
@@ -39,8 +44,12 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
           title={`Dropdown to ${project.title}`}
         >
           <TitleContainer>
-            {!open && <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />}
-            {open && <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />}
+            {!ignoreDropdown && !open && (
+              <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />
+            )}
+            {!ignoreDropdown && open && (
+              <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />
+            )}
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
@@ -64,7 +73,7 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
         />
       </ProjectBannerContainer>
 
-      <ProjectInfo $isOpen={open}>
+      <ProjectInfo $isOpen={ignoreDropdown || open}>
         <StyledProjectVideo>
           {ProjectHasVideo(project) && (
             <ProjectVideo project={project} videoSize={videoSize} />
