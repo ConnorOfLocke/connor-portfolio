@@ -55,7 +55,7 @@ export default function IconWrapper({
   const iconPair = iconPairs[iconindex];
 
   return (
-    <IconContainer>
+    <IconContainer title={`${iconID} icon`}>
       {iconPair && (
         <IconBackground
           $backgroundColor={backgroundColor}

@@ -5,7 +5,12 @@ import LinkButton from "../../Utils/LinkButton";
 export default function ProjectLinks({ project, iconSize, ...props }) {
   return (
     <LinkContainer {...props}>
-      <StyledLinkButton urlLink={project.urlLink} target="_blank" rel="noopener noopener">
+      <StyledLinkButton
+        urlLink={project.urlLink}
+        target="_blank"
+        rel="noopener noopener"
+        title={`Link to ${project.title}`}
+      >
         <IconWrapper iconID={"link"} iconSize={iconSize} />
       </StyledLinkButton>
     </LinkContainer>
