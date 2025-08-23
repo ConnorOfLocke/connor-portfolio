@@ -8,12 +8,18 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
   const isReact = project.engine === "React";
 
   const isIOS = project.target.findIndex((target) => target === "IOS") !== -1;
-  const isAndroid = project.target.findIndex((target) => target === "ANDROID") !== -1;
-  const isPlaystation = project.target.findIndex((target) => target === "PS4") !== -1;
-  const isXbox = project.target.findIndex((target) => target === "XBOXONE") !== -1;
+  const isAndroid =
+    project.target.findIndex((target) => target === "ANDROID") !== -1;
+  const isPlaystation =
+    project.target.findIndex((target) => target === "PS4") !== -1;
+  const isXbox =
+    project.target.findIndex((target) => target === "XBOXONE") !== -1;
   const isPC = project.target.findIndex((target) => target === "PC") !== -1;
-  const isWebGl = project.target.findIndex((target) => target === "WebGL") !== -1;
+  const isWebGl =
+    project.target.findIndex((target) => target === "WebGL") !== -1;
   const isWeb = project.target.findIndex((target) => target === "Web") !== -1;
+  const isSwitch =
+    project.target.findIndex((target) => target === "SWITCH") !== -1;
 
   return (
     <ProjectIconContainer {...props}>
@@ -24,12 +30,15 @@ export default function ProjectIcons({ project, iconSize, ...props }) {
       <IconRow>
         {isIOS && <IconWrapper iconID={"ios"} iconSize={iconSize} />}
         {isAndroid && <IconWrapper iconID={"android"} iconSize={iconSize} />}
+        {isSwitch && <IconWrapper iconID={"switch"} iconSize={iconSize} />}
         {isPlaystation && <IconWrapper iconID={"xbox"} iconSize={iconSize} />}
         {isXbox && <IconWrapper iconID={"playstation"} iconSize={iconSize} />}
         {isPC && <IconWrapper iconID={"pc"} iconSize={iconSize} />}
         {isWebGl && <IconWrapper iconID={"webgl"} iconSize={iconSize} />}
         {isWeb && <IconWrapper iconID={"web"} iconSize={iconSize} />}
-        {project.target.length <= 0 && <IconWrapper iconID={"mystery"} iconSize={iconSize} />}
+        {project.target.length <= 0 && (
+          <IconWrapper iconID={"mystery"} iconSize={iconSize} />
+        )}
       </IconRow>
     </ProjectIconContainer>
   );

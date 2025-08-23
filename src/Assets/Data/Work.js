@@ -2,14 +2,13 @@ import TurbochilliPanelimage from "../Images/turbochilli-panel.png";
 import BlowfishPanelimage from "../Images/blowfish-panel.png";
 import PlaysidePanelimage from "../Images/playside-panel.png";
 import CTGPanelimage from "../Images/ctg-panel.png";
-import SMGPanelimage from "../Images/smg-panel.png";
+import SMGPanelimage from "../Images/smg-panel_lego.png";
 import PersonalPanelimage from "../Images/personal-panel.png";
 
 import ASMRProjectImage1 from "../Images/ProjectImages/asmr1.png";
 import ASMRProjectImage2 from "../Images/ProjectImages/asmr2.png";
 import EasyBillProjectImage1 from "../Images/ProjectImages/bill1.png";
 import EasyBillProjectImage2 from "../Images/ProjectImages/bill2.png";
-import SMGProjectImage from "../Images/ProjectImages/smg_wallpaper.png";
 import SketchAThing from "../Images/ProjectImages/sketchathing.png";
 
 import Banner_EasyBillPay from "../Images/ProjectImages/Banners/Blowfish/EasyBillPay_Banner.png";
@@ -27,7 +26,7 @@ import Banner_PlayED from "../Images/ProjectImages/Banners/Chaos/PlayED_Banner.p
 import Banner_Farm from "../Images/ProjectImages/Banners/Chaos/VirtualFarm_Banner.png";
 import Banner_Virus from "../Images/ProjectImages/Banners/Chaos/VirusBlaster_Banner.png";
 
-import Bannner_SMG from "../Images/ProjectImages/Banners/SMG_Banner.png";
+import Bannner_Lego from "../Images/ProjectImages/Banners/Lego_Banner.png";
 
 import Banner_ASMR from "../Images/ProjectImages/Banners/Playside/ASMR_Banner.png";
 import Banner_AnimalWarfare from "../Images/ProjectImages/Banners/Playside/AnimalWarfare_Banner.png";
@@ -59,6 +58,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Arcade rhythm game - Very first released game! Made 3 additional levels with new mechanics and some light modeling. Eventually was bought and reworked by a separate company.",
         },
@@ -72,6 +72,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Action-Puzzle RPG for mobile. QA’d level progression, fixed bugs implemented analytics. Was eventually updated it for 64-bit IOS and Android.",
         },
@@ -84,6 +85,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Infinite-Surfer Game for mobile. On development through prototyping all the way to release. Added gameplay, monetization, localization, game services and analytics.",
         },
@@ -97,6 +99,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "AR Arcade Shooter! First foray into making an Augmented Reality game using IOS and Android’s native libraries. ",
         },
@@ -110,6 +113,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Casual Block Puzzle Game. Programed new mechanics, gameplay, monetization, analytics and designed 800+ levels for the game.",
         },
@@ -122,6 +126,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Perspective changing Arcade game. QA’d and implemented reward systems and analytics.",
         },
@@ -151,6 +156,7 @@ const WORK = {
             },
           ],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Ported and updated these games to wider 64-Bit IOS devices.",
         },
@@ -173,6 +179,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4", "IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Game adaptation of the Colin Thiele’s Book to tie into the movie of this. First game I worked on that was ported to Switch, XboxOne and PS4.",
         },
@@ -186,6 +193,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Third-Person Mech fighter. In charge of optimizing, localizing and porting it to consoles. Expanded knowledge on the Post Processing Stack and Addressables.",
         },
@@ -199,6 +207,7 @@ const WORK = {
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Side Scrolling Brawler - First console porting job using GameMaker. Additionally localized it into several languages. ",
         },
@@ -212,6 +221,7 @@ const WORK = {
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Kirby inspired 2D platformer. Like “Infinte”, Ported to consoles and localized it.",
         },
@@ -225,6 +235,7 @@ const WORK = {
           engine: "Unity",
           target: ["SWITCH", "XBOXONE", "PS4"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Neat Puzzle Game! Was able to lead the porting job to translate the touch to controller input and localize it to several languages.",
         },
@@ -238,6 +249,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID", "WebGL"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Ongoing project for Scholastic. Was put in charge of general gameplay, dialogue and implementing minigames delivered by a contracted company.",
         },
@@ -251,6 +263,7 @@ const WORK = {
           engine: "GameMaker",
           target: ["PC", "SWITCH", "XBOXONE", "PS4"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "2D action platformer - Setup the porting, localization and ported the DLC for Consoles.",
         },
@@ -264,6 +277,10 @@ const WORK = {
           engine: undefined,
           target: ["IOS", "ANDROID", "Web"],
           images: [EasyBillProjectImage1, EasyBillProjectImage2],
+          imagesAltText: [
+            "Easy Bill Pay Screenshot 1",
+            "Easy Bill Pay Screenshot 2",
+          ],
           description:
             "Application to help automate paying bills and sending out funds. Mostly front end development and QA.",
         },
@@ -288,6 +305,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Auto-Battler based on the Animal Kingdom. I was put in change of implementing special abilities, AB testing services, Analytics and visual effects.",
         },
@@ -302,6 +320,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Online competitive equestrian game. I worked on integrating PlayFab services, automated events, database changes and general gameplay. ",
         },
@@ -316,6 +335,7 @@ const WORK = {
           engine: "Unity",
           target: ["IOS", "ANDROID"],
           images: [ASMRProjectImage1, ASMRProjectImage2],
+          imagesAltText: ["ASMR Screenshot 1", "ASMR Screenshot 2"],
           description:
             "ASMR app that lets you cut, shave and manipulate objects. Made some general gameplay changes and bug fixes.",
         },
@@ -339,6 +359,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "Steam"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "God game based on restoring an ocean reef. Made the Crabling Animation system, Day/Night Cycle and contributed to general game play.",
         },
@@ -352,6 +373,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "Android"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Interactive science exhibit made for the “Gateway to Science” Museum in North Dakota. Built to work with a large touch screen and RFID readers.",
         },
@@ -365,6 +387,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "Android"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Another “Gateway to Science” project. Took on the Lead Developer role to make a Puzzle game based on the process of creating a vaccine.",
         },
@@ -378,6 +401,7 @@ const WORK = {
           engine: "Unity",
           target: ["PC", "Federation Square Melbourne"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Interactive game/music video publicly broadcast at Fed Square. Contributed to the real time and weather system that read sunrise/sunset and current weather to change the environment in game.",
         },
@@ -391,6 +415,7 @@ const WORK = {
           engine: "React",
           target: ["Web"],
           images: undefined,
+          imagesAltText: undefined,
           description:
             "Web tool for teachers to create and track scheduled lessons made from sets of games. Learned React using Typescript and contributed to both back-end and front-end processes.",
         },
@@ -405,17 +430,18 @@ const WORK = {
       panelImg: SMGPanelimage,
       projects: [
         {
-          title: "Unreleased Title",
-          urlLink: undefined,
-          youtubeLink: undefined,
+          title: "LEGO Party!",
+          urlLink: "https://legoparty.com/",
+          youtubeLink: "https://www.youtube.com/watch?v=hVJFTDtpkBY",
           otherVideoLink: undefined,
-          bannerImg: Bannner_SMG,
+          bannerImg: Bannner_Lego,
           favorite: false,
           engine: "Unity",
-          target: [],
-          images: [SMGProjectImage],
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          images: undefined,
+
           description:
-            "Contracted to help with gameplay but branched into animation and asset importing.",
+            "Contracted to prototype minigames and import Lego builds into game ready assets. Moved to implementing cutscenes and animations.",
         },
       ],
       franchises: [],
@@ -437,6 +463,7 @@ const WORK = {
           engine: "React",
           target: ["Web"],
           images: [SketchAThing],
+          imagesAltText: ["Sketch a thing logo"],
           description:
             "Tool for when you don't know what to draw. Made for timed sketching sessions with randomised prompts. Made for the sport and thrill of it but mostly test my front-end skills on a full project of my own creation",
         },

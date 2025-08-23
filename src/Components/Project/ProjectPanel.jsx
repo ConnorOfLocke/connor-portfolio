@@ -13,7 +13,12 @@ function ProjectHasVideo(project) {
   return Boolean(project.otherVideoLink) || Boolean(project.youtubeLink);
 }
 
-export default function ProjectPanel({ project, isFirst, isLast }) {
+export default function ProjectPanel({
+  project,
+  isFirst,
+  isLast,
+  ignoreDropdown,
+}) {
   const themeContext = useContext(ThemeContext);
   const { widerThanMedium, widerThanSmall } = useContext(ScreenSizeContext);
 
@@ -33,24 +38,46 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
   return (
     <ProjectContainer $isLast={isLast}>
       <ProjectHeader>
-        <ProjectTitle onClick={handleTitleClick} $isFirst={isFirst}>
+        <ProjectTitle
+          onClick={handleTitleClick}
+          $isFirst={isFirst}
+          title={`Dropdown to ${project.title}`}
+        >
           <TitleContainer>
-            {!open && <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />}
-            {open && <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />}
+            {!ignoreDropdown && !open && (
+              <IconWrapper iconID={"arrow-right"} iconSize={"1rem"} />
+            )}
+            {!ignoreDropdown && open && (
+              <IconWrapper iconID={"arrow-down"} iconSize={"1rem"} />
+            )}
             <ProjectTitleText>{project.title}</ProjectTitleText>
           </TitleContainer>
         </ProjectTitle>
-        <StyledProjectLinks project={project} iconSize={themeContext.iconSize} $isFirst={isFirst} />
+        <StyledProjectLinks
+          project={project}
+          iconSize={themeContext.iconSize}
+          $isFirst={isFirst}
+        />
       </ProjectHeader>
 
       <ProjectBannerContainer>
-        {project.bannerImg && <ProjectBanner src={project.bannerImg} />}
-        <StyledProjectIcons project={project} iconSize={themeContext.iconSize} />
+        {project.bannerImg && (
+          <ProjectBanner
+            src={project.bannerImg}
+            alt={`${project.title} banner`}
+          />
+        )}
+        <StyledProjectIcons
+          project={project}
+          iconSize={themeContext.iconSize}
+        />
       </ProjectBannerContainer>
 
-      <ProjectInfo $isOpen={open}>
+      <ProjectInfo $isOpen={ignoreDropdown || open}>
         <StyledProjectVideo>
-          {ProjectHasVideo(project) && <ProjectVideo project={project} videoSize={videoSize} />}
+          {ProjectHasVideo(project) && (
+            <ProjectVideo project={project} videoSize={videoSize} />
+          )}
           <ProjectImages project={project} />
         </StyledProjectVideo>
         <SubtitleText>{project.description}</SubtitleText>
@@ -62,7 +89,8 @@ export default function ProjectPanel({ project, isFirst, isLast }) {
 const ProjectContainer = styled.li`
   display: flex;
   flex-direction: column;
-  margin-bottom: ${(props) => (props.$isLast ? props.theme.innerBorderRadius : "1rem")};
+  margin-bottom: ${(props) =>
+    props.$isLast ? props.theme.innerBorderRadius : "1rem"};
 `;
 
 const ProjectTitleText = styled(SubHeadertext)`
@@ -82,7 +110,8 @@ const ProjectHeader = styled.div`
 const ProjectTitle = styled.button`
   background-color: ${(props) => props.theme.colors.projectTitlePanel};
 
-  border-radius: ${(props) => (props.$isFirst ? `${props.theme.innerBorderRadius}  0 0 0` : "0")};
+  border-radius: ${(props) =>
+    props.$isFirst ? `${props.theme.innerBorderRadius}  0 0 0` : "0"};
   padding: 0;
   margin: 0;
   border: 0;
@@ -97,7 +126,8 @@ const ProjectTitle = styled.button`
 `;
 
 const StyledProjectLinks = styled(ProjectLinks)`
-  border-radius: ${(props) => (props.$isFirst ? `0 ${props.theme.innerBorderRadius} 0 0;` : "0")};
+  border-radius: ${(props) =>
+    props.$isFirst ? `0 ${props.theme.innerBorderRadius} 0 0;` : "0"};
 `;
 
 const ProjectInfo = styled.div`
@@ -119,9 +149,24 @@ const ProjectBanner = styled.img`
   position: absolute;
   height: 4rem;
 
-  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
-  -moz-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
-  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -moz-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 `;
 
 const StyledProjectIcons = styled(ProjectIcons)`

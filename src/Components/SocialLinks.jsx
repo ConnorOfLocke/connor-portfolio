@@ -7,7 +7,13 @@ export default function SocialLinks({ altIcon, ...props }) {
   return (
     <SocialList {...props}>
       {SOCIALS.map((social) => (
-        <LinkButton key={social.id} urlLink={social.url} target="_blank" rel="noopener noopener">
+        <LinkButton
+          key={social.id}
+          urlLink={social.url}
+          target="_blank"
+          rel="noopener noopener"
+          title={`Link to ${social.id}`}
+        >
           <SocialIcon socialId={social.id} altIcon={altIcon} />
         </LinkButton>
       ))}

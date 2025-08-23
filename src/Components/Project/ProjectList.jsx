@@ -10,6 +10,7 @@ export default function ProjectList({ workplace, ...props }) {
           project={project}
           isFirst={projectIndex === 0}
           isLast={projectIndex === workplace.projects.length - 1}
+          ignoreDropdown={workplace.projects.length <= 1}
         />
       ))}
     </ProjectListContainer>
