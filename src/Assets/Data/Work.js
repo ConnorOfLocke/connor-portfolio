@@ -2,14 +2,13 @@ import TurbochilliPanelimage from "../Images/turbochilli-panel.png";
 import BlowfishPanelimage from "../Images/blowfish-panel.png";
 import PlaysidePanelimage from "../Images/playside-panel.png";
 import CTGPanelimage from "../Images/ctg-panel.png";
-import SMGPanelimage from "../Images/smg-panel.png";
+import SMGPanelimage from "../Images/smg-panel_lego.png";
 import PersonalPanelimage from "../Images/personal-panel.png";
 
 import ASMRProjectImage1 from "../Images/ProjectImages/asmr1.png";
 import ASMRProjectImage2 from "../Images/ProjectImages/asmr2.png";
 import EasyBillProjectImage1 from "../Images/ProjectImages/bill1.png";
 import EasyBillProjectImage2 from "../Images/ProjectImages/bill2.png";
-import SMGProjectImage from "../Images/ProjectImages/smg_wallpaper.png";
 import SketchAThing from "../Images/ProjectImages/sketchathing.png";
 
 import Banner_EasyBillPay from "../Images/ProjectImages/Banners/Blowfish/EasyBillPay_Banner.png";
@@ -27,7 +26,7 @@ import Banner_PlayED from "../Images/ProjectImages/Banners/Chaos/PlayED_Banner.p
 import Banner_Farm from "../Images/ProjectImages/Banners/Chaos/VirtualFarm_Banner.png";
 import Banner_Virus from "../Images/ProjectImages/Banners/Chaos/VirusBlaster_Banner.png";
 
-import Bannner_SMG from "../Images/ProjectImages/Banners/SMG_Banner.png";
+import Bannner_Lego from "../Images/ProjectImages/Banners/Lego_Banner.png";
 
 import Banner_ASMR from "../Images/ProjectImages/Banners/Playside/ASMR_Banner.png";
 import Banner_AnimalWarfare from "../Images/ProjectImages/Banners/Playside/AnimalWarfare_Banner.png";
@@ -405,17 +404,17 @@ const WORK = {
       panelImg: SMGPanelimage,
       projects: [
         {
-          title: "Unreleased Title",
-          urlLink: undefined,
-          youtubeLink: undefined,
+          title: "LEGO Party!",
+          urlLink: "https://legoparty.com/",
+          youtubeLink: "https://www.youtube.com/watch?v=hVJFTDtpkBY",
           otherVideoLink: undefined,
-          bannerImg: Bannner_SMG,
+          bannerImg: Bannner_Lego,
           favorite: false,
           engine: "Unity",
-          target: [],
-          images: [SMGProjectImage],
+          target: ["PC", "SWITCH", "XBOXONE", "PS4"],
+          images: [],
           description:
-            "Contracted to help with gameplay but branched into animation and asset importing.",
+            "Contracted to prototype minigames and import Lego builds into game ready assets. Moved to implementing cutscenes and animations.",
         },
       ],
       franchises: [],
